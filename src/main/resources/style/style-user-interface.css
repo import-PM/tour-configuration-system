@@ -1,0 +1,11 @@
+*{
+    background-section-main : #2f4254;
+}
+
+.background-section-main{
+    -fx-background-color : background;
+}
+
+.background {
+    background-image: linear-gradient(to right, #0A8270, #95FF87);
+}
