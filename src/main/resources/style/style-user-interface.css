@@ -1,4 +1,9 @@
 *{
+    /* Color Mix */
+    pinegreen-color             : #0A8270; /* Pine Green */
+    mintgreen-color             : #95FF87; /* Mint Green */
+    darkcenrulean-color         : #02457A; /* Dark Cerulean */
+
     /* Layout */
     background-section-main     : #0A8270; /* Pine Green */
     background-section-sidebar  : #0A8270; /* Pine Green */
@@ -18,6 +23,7 @@
     header-color                : #000000; /* Black */
     title-color-btn-sidebar     : #ffffff; /* white */
     title-btn-hotel-choose      : #ffffff; /* White */
+    title-btn-default           : #ffffff; /* White */
     title-color-on-page         : #000000; /* Black */
     title-color-price           : #FF0000; /* Red */
     text-color-on-text-field    : #000000; /* Black */
@@ -27,8 +33,12 @@
 
 /* <--------Layouts Function--------------------------------------------------> */
 
-.background-section-main {
+.background-section-main-normal {
     -fx-background-color: background-section-main;
+}
+
+.background-section-main {
+    -fx-background-color: linear-gradient(to right bottom, pinegreen-color , mintgreen-color);
 }
 
 .background-section-sidebar {
@@ -47,36 +57,65 @@
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
 }
 
 .btn-sidebar-hotel {
     -fx-background-color: btn-sidebar-hotel;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
+    -fx-border-radius: 5;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
 }
 
 .btn-sidebar-transport {
     -fx-background-color: btn-sidebar-transport;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
+    -fx-border-radius: 5;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
 }
 
 .btn-sidebar-tourList {
     -fx-background-color: btn-sidebar-tourlist;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
+    -fx-border-radius: 5;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
 }
 
 .btn-sidebar-insurance {
     -fx-background-color: btn-sidebar-insurance;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
+    -fx-border-radius: 5;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
 }
 
 .btn-hotel-choose {
     -fx-background-color: btn-color-defualt;
     -fx-text-fill: title-btn-hotel-choose;
     -fx-font-size: 12;
+    -fx-border-radius: 5;
+}
+
+.btn-app-default {
+    -fx-background-color: btn-color-default;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 12;
+    -fx-border-radius: 5;
+}
+
+.btn-page {
+    -fx-background-color: btn-color-default;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 12;
+    -fx-border-radius: 20;
 }
 
 /* <--------------------------------------------------------------------------> */
