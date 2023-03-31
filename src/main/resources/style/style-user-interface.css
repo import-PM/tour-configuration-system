@@ -6,16 +6,44 @@
     background-image: linear-gradient(to right, #0A8270, #95FF87);
 }
 
-/* <--------Background Function-----------------------------------------------> */
+/* <--------Layout Function---------------------------------------------------> */
 
-.background-main {
+.background-section-main {
     background-image: linear-gradient(to right, #0A8270, #95FF87);
+}
+
+.background-section-sidebar {
+    background-color: transparent;
+}
+
+/* <--------------------------------------------------------------------------> */
+
+/* <--------Button Function---------------------------------------------------> */
+
+.btn-sidebar-build {
+    background-color: transparent;
+}
+
+.btn-sidebar-hotel {
+    background-color: transparent;
+}
+
+.btn-sidebar-transpot {
+    background-color: transparent;
+}
+
+.btn-sidebar-tourlist {
+    background-color: transparent;
+}
+
+.btn-sidebar-insurance {
+    background-color: transparent;
 }
 
 /* <--------------------------------------------------------------------------> */
 
 /* <--------Text Function-----------------------------------------------------> */
 
-
+/*  */
 
 /* <--------------------------------------------------------------------------> */
