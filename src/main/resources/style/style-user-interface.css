@@ -1,49 +1,119 @@
 *{
-    background-section-main : #2f4254;
+    /* Layout */
+    background-section-main     : #0A8270; /* Pine Green */
+    background-section-sidebar  : #0A8270; /* Pine Green */
+    background-section-option   : #ffffff; /* White */
+    background-text-field       : #ffffff; /* White */
+    background-text-area        : #ffffff; /* White */
+
+    /* Button */
+    btn-sidebar-build           : rgba(0,0,0,0.5); /* transparent */
+    btn-sidebar-hotel           : rgba(0,0,0,0.5); /* transparent */
+    btn-sidebar-transport       : rgba(0,0,0,0.5); /* transparent */
+    btn-sidebar-tourList        : rgba(0,0,0,0.5); /* transparent */
+    btn-sidebar-insurance       : rgba(0,0,0,0.5); /* transparent */
+    btn-color-defual            : #02457A; /* Dark Cerulean */
+
+    /* Text */
+    header-color                : #000000; /* Black */
+    title-color-btn-sidebar     : #ffffff; /* white */
+    title-btn-hotel-choose      : #ffffff; /* White */
+    title-color-on-page         : #000000; /* Black */
+    title-color-price           : #FF0000; /* Red */
+    text-color-on-text-field    : #000000; /* Black */
+    text-color-on-text-area     : #000000; /* Black */
+
 }
 
-.background-main {
-    background-image: linear-gradient(to right, #0A8270, #95FF87);
-}
-
-/* <--------Layout Function---------------------------------------------------> */
+/* <--------Layouts Function--------------------------------------------------> */
 
 .background-section-main {
-    background-image: linear-gradient(to right, #0A8270, #95FF87);
+    -fx-background-color: background-section-main;
 }
 
 .background-section-sidebar {
-    background-color: transparent;
+    -fx-background-color: backround-section-sidebar;
+}
+
+.background-section-option {
+    -fx-background-color: backround-section-option;
 }
 
 /* <--------------------------------------------------------------------------> */
 
-/* <--------Button Function---------------------------------------------------> */
+/* <--------Buttons Function--------------------------------------------------> */
 
 .btn-sidebar-build {
-    background-color: transparent;
+    -fx-background-color: btn-sidebar-build;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 36;
 }
 
 .btn-sidebar-hotel {
-    background-color: transparent;
+    -fx-background-color: btn-sidebar-hotel;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 36;
 }
 
-.btn-sidebar-transpot {
-    background-color: transparent;
+.btn-sidebar-transport {
+    -fx-background-color: btn-sidebar-transport;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 36;
 }
 
-.btn-sidebar-tourlist {
-    background-color: transparent;
+.btn-sidebar-tourList {
+    -fx-background-color: btn-sidebar-tourlist;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 36;
 }
 
 .btn-sidebar-insurance {
-    background-color: transparent;
+    -fx-background-color: btn-sidebar-insurance;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 36;
 }
+
+.btn-hotel-choose {
+    -fx-background-color: btn-color-defualt;
+    -fx-text-fill: title-btn-hotel-choose;
+    -fx-font-size: 12;
+}
+
+.btn-choose {
+
+}
+
 
 /* <--------------------------------------------------------------------------> */
 
 /* <--------Text Function-----------------------------------------------------> */
 
-/*  */
+/* Header */
+.header {
+    -fx-text-fill: header-color;
+    -fx-font-size: 36;
+}
 
+/* title */
+.title-color-on-page {
+    -fx-text-fill: title-color-on-page;
+    -fx-font-size: 24;
+}
+
+.title-color-price {
+    -fx-text-fill: title-color-price;
+    -fx-font-size: 12;
+}
+
+.text-field-color {
+    -fx-background-color: background-text-field;
+    -fx-text-fill : text-color-on-text-field;
+    -fx-font-size: 12;
+}
+
+.text-area-color {
+    -fx-background-color: background-text-area;
+    -fx-text-fill : text-color-on-text-area;
+    -fx-font-size: 12;
+}
 /* <--------------------------------------------------------------------------> */
