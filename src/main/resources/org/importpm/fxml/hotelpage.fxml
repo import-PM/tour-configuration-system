@@ -11,63 +11,76 @@
 
 <AnchorPane fx:id="background" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
     <children>
-        <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="200.0" prefWidth="100.0" spacing="35.0">
+        <VBox fx:id="sidebar" alignment="CENTER" layoutY="185.0" prefHeight="455.0" prefWidth="245.0" spacing="35.0">
             <children>
-                <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
-                <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
-                <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" text="Button" />
-                <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" text="Button" />
+                <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
+                <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
+                <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" text="Button" />
+                <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" text="Button" />
+                <HBox fx:id="themeHBox" alignment="CENTER" prefHeight="104.0" prefWidth="246.0" spacing="35.0">
+                    <children>
+                        <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                    </children>
+                </HBox>
             </children>
         </VBox>
         <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-        <AnchorPane fx:id="fieldpane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
+        <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label fx:id="headerlabel" layoutX="20.0" layoutY="20.0" text="โรงแรมและที่พัก">
+            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" text="โรงแรมและที่พัก">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="typelabel" layoutX="60.0" layoutY="90.0" text="ประเภทที่พัก">
+            <Label fx:id="typeLabel" layoutX="60.0" layoutY="90.0" text="ประเภทที่พัก">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="typetextfield" layoutX="60.0" layoutY="125.0" prefHeight="25.0" prefWidth="135.0" />
-            <Label fx:id="namelabel" layoutX="220.0" layoutY="90.0" text="ชื่อที่พัก">
+            <TextField fx:id="typeTextField" layoutX="60.0" layoutY="125.0" prefHeight="25.0" prefWidth="135.0" />
+            <Label fx:id="nameLabel" layoutX="220.0" layoutY="90.0" text="ชื่อที่พัก">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="nametextfield" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="300.0" />
-            <Label fx:id="ratinglabel" layoutX="555.0" layoutY="90.0" text="ระดับมาตรฐาน">
+            <TextField fx:id="nameTextField" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="300.0" />
+            <Label fx:id="ratingLabel" layoutX="555.0" layoutY="90.0" text="ระดับมาตรฐาน">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="ratingtextfield" layoutX="555.0" layoutY="125.0" prefHeight="20.0" prefWidth="145.0" />
-            <Label fx:id="pricelabel" layoutX="725.0" layoutY="90.0" text="ช่วงราคา">
+            <TextField fx:id="ratingTextField" layoutX="555.0" layoutY="125.0" prefHeight="20.0" prefWidth="145.0" />
+            <Label fx:id="priceLabel" layoutX="725.0" layoutY="90.0" text="ช่วงราคา">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="pricetextfield" layoutX="725.0" layoutY="125.0" prefHeight="20.0" prefWidth="155.0" />
-            <AnchorPane fx:id="hotelitemlist1" layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist2" layoutX="55.0" layoutY="225.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist3" layoutX="55.0" layoutY="285.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist4" layoutX="55.0" layoutY="345.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist5" layoutX="55.0" layoutY="405.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist6" layoutX="55.0" layoutY="465.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelitemlist7" layoutX="55.0" layoutY="525.0" prefHeight="50.0" prefWidth="1010.0" />
-            <HBox fx:id="underbarvbox" alignment="CENTER" layoutX="55.0" layoutY="590.0" prefHeight="50.0" prefWidth="1010.0">
+            <TextField fx:id="priceTextField" layoutX="725.0" layoutY="125.0" prefHeight="20.0" prefWidth="155.0" />
+<!--            <AnchorPane fx:id="hotelitemlist1" layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist2" layoutX="55.0" layoutY="225.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist3" layoutX="55.0" layoutY="285.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist4" layoutX="55.0" layoutY="345.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist5" layoutX="55.0" layoutY="405.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist6" layoutX="55.0" layoutY="465.0" prefHeight="50.0" prefWidth="1010.0" />-->
+<!--            <AnchorPane fx:id="hotelitemlist7" layoutX="55.0" layoutY="525.0" prefHeight="50.0" prefWidth="1010.0" />-->
+            <HBox fx:id="underBarVBox" alignment="CENTER" layoutX="55.0" layoutY="590.0" prefHeight="50.0" prefWidth="1010.0">
                <children>
-                  <Button fx:id="pagebutton" mnemonicParsing="false" onAction="#handlePageButton" prefHeight="20.0" prefWidth="20.0" text="1" />
+                  <Button fx:id="pageButton" mnemonicParsing="false" onAction="#handlePageButton" prefHeight="20.0" prefWidth="20.0" text="1" />
                </children>
             </HBox>
-            <Label fx:id="searchbuttonlable" layoutX="900.0" layoutY="120.0" maxHeight="20.0" onMouseClicked="#handleClickSearchButton" text="search">
+            <Label fx:id="searchButtonLabel" layoutX="900.0" layoutY="120.0" maxHeight="20.0" onMouseClicked="#handleClickSearchButton" text="search">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children></AnchorPane>
+        <Label fx:id="exitLabelButton" layoutX="20.0" layoutY="715.0" onMouseClicked="#handleClickExitButton" text="Exit">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
     </children>
 </AnchorPane>

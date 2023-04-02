@@ -10,13 +10,13 @@
     <children>
         <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="200.0" prefWidth="100.0" spacing="35.0">
             <children>
-                <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
-                <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
-                <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" text="Button" />
-                <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" text="Button" />
+                <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
+                <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
+                <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" text="Button" />
+                <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" text="Button" />
             </children>
         </VBox>
         <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-        <AnchorPane fx:id="fieldpane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" />
+        <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" />
     </children>
 </AnchorPane>
