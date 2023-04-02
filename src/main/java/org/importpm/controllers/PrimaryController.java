@@ -11,6 +11,6 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.goTo(Page.SECONDARY.getFxmlPath());
+        App.goTo(Page.SECONDARY);
     }
 }

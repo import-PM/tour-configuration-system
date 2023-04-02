@@ -25,8 +25,8 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void goTo(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    public static void goTo(Page page) throws IOException {
+        scene.setRoot(loadFXML(page.getFxmlPath()));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
