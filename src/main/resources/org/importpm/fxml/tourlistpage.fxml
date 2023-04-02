@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane fx:id="background" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
     <children>
-        <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="200.0" prefWidth="100.0" spacing="35.0">
+        <VBox fx:id="sidebarVBox" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="200.0" prefWidth="100.0" spacing="35.0">
             <children>
                 <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
                 <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
