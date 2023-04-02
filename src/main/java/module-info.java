@@ -4,5 +4,6 @@ module org.importpm {
     requires transitive javafx.graphics;
 
     opens org.importpm to javafx.fxml;
+    opens org.importpm.controllers to javafx.fxml;
     exports org.importpm;
 }
