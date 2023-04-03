@@ -67,7 +67,7 @@
                    <ImageView fx:id="typeImageView1" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                    <Pane fx:id="separator1_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                    <Pane fx:id="separator1_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                   <Button fx:id="chooseButton1" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton1" text="Button" />
+                   <Button fx:id="selectButton1" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton1" text="Button" />
                    <ImageView fx:id="ratingImageView1" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                    <Label fx:id="nameLabel1" layoutX="170.0" layoutY="7.5" text="name">
                        <font>
@@ -91,7 +91,7 @@
                     <ImageView fx:id="typeImageView2" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator2_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator2_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton2" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton2" text="Button" />
+                    <Button fx:id="selectButton2" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton2" text="Button" />
                     <ImageView fx:id="ratingImageView2" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel2" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
@@ -115,7 +115,7 @@
                     <ImageView fx:id="typeImageView3" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator3_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator3_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton3" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton3" text="Button" />
+                    <Button fx:id="selectButton3" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton3" text="Button" />
                     <ImageView fx:id="ratingImageView3" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel3" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
@@ -139,7 +139,7 @@
                     <ImageView fx:id="typeImageView4" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator4_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator4_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton4" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton4" text="Button" />
+                    <Button fx:id="selectButton4" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton4" text="Button" />
                     <ImageView fx:id="ratingImageView4" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel4" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
@@ -163,7 +163,7 @@
                     <ImageView fx:id="typeImageView5" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator5_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator5_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton5" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton5" text="Button" />
+                    <Button fx:id="selectButton5" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton5" text="Button" />
                     <ImageView fx:id="ratingImageView5" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel5" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
@@ -187,7 +187,7 @@
                     <ImageView fx:id="typeImageView6" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator6_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator6_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton6" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton6" text="Button" />
+                    <Button fx:id="selectButton6" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton6" text="Button" />
                     <ImageView fx:id="ratingImageView6" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel6" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
@@ -211,7 +211,7 @@
                     <ImageView fx:id="typeImageView7" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator7_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator7_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="chooseButton7" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlechoosebutton7" text="Button" />
+                    <Button fx:id="selectButton7" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton7" text="Button" />
                     <ImageView fx:id="ratingImageView7" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
                     <Label fx:id="nameLabel7" layoutX="170.0" layoutY="7.5" text="name">
                         <font>
