@@ -1,17 +1,18 @@
 *{
     /* Color Mix */
-    pinegreen-color             : #0A8270; /* Pine Green */
-    mintgreen-color             : #95FF87; /* Mint Green */
-    darkcenrulean-color         : #02457A; /* Dark Cerulean */
+    main-color                  : #0A8270; /* Pine Green */
+    sub-color                   : #95FF87; /* Mint Green */
+    btn-color                   : #02457A; /* Dark Cerulean */
 
     /* Layout */
     background-section-main     : #0A8270; /* Pine Green */
     background-section-sidebar  : #0A8270; /* Pine Green */
     background-section-option   : #ffffff; /* White */
-    background-text-field       : #ffffff; /* White */
+    background-text-field       : #D2D2D2; /* White */
     background-text-area        : #ffffff; /* White */
 
     /* Button */
+    btn-sidebar-all             : #ffffff; /* White */
     btn-sidebar-build           : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-hotel           : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-transport       : rgba(0,0,0,0.5); /* transparent */
@@ -37,8 +38,8 @@
     -fx-background-color: background-section-main;
 }
 
-.background-section-main {
-    -fx-background-color: linear-gradient(to right bottom, pinegreen-color , mintgreen-color);
+.background-section-main-linear {
+    -fx-background-color: linear-gradient(to right bottom, main-color , sub-color);
 }
 
 .background-section-sidebar {
@@ -46,17 +47,28 @@
 }
 
 .background-section-option {
-    -fx-background-color: backround-section-option;
+    -fx-background-color: background-section-option;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
 }
 
 /* <--------------------------------------------------------------------------> */
 
 /* <--------Buttons Function--------------------------------------------------> */
 
+.btn-sidebar {
+    -fx-pref-width: 40;
+    -fx-background-color: btn-sidebar-all;
+    -fx-text-fill: main-color;
+    -fx-font-size: 24;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+}
+
 .btn-sidebar-build {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
-    -fx-font-size: 36;
+    -fx-font-size: 20;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
@@ -65,7 +77,6 @@
     -fx-background-color: btn-sidebar-hotel;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
-    -fx-border-radius: 5;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
@@ -74,7 +85,6 @@
     -fx-background-color: btn-sidebar-transport;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
-    -fx-border-radius: 5;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
@@ -83,7 +93,6 @@
     -fx-background-color: btn-sidebar-tourlist;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
-    -fx-border-radius: 5;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
@@ -92,7 +101,6 @@
     -fx-background-color: btn-sidebar-insurance;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 36;
-    -fx-border-radius: 5;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
 }
