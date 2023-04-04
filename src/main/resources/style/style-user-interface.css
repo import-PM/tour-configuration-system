@@ -46,6 +46,8 @@
 
 .background-section-main-linear {
     -fx-background-color: linear-gradient(to right bottom, main-color , sub-color);
+    -fx-pref-width: 1366px;
+    -fx-pref-height: 768px;
 }
 
 .background-section-sidebar {
@@ -57,9 +59,15 @@
     -fx-background-color: background-section-option;
     -fx-background-radius: 30px;
     -fx-border-radius: 30px;
-    -fx-pref-width: 600;
-    -fx-pref-height: auto;
+    -fx-pref-width: 1100;
+    -fx-pref-height: 700;
     -fx-translate-x: 70;
+}
+
+.card-hotel {
+    -fx-pref-width: 500px;
+    -fx-max-width: 500px;
+    -fx-pref-height: 50px;
 }
 
 /* <--------------------------------------------------------------------------> */
