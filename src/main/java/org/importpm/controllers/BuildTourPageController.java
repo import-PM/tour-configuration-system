@@ -1,13 +1,22 @@
 package org.importpm.controllers;
 
+import java.io.IOException;
+
+import org.importpm.App;
+import org.importpm.models.enums.TourStatus;
+import org.importpm.databases.Database;
+import org.importpm.models.Tour;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class BuildTourPageController extends AbstractPageController {
     
@@ -39,11 +48,23 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     @FXML private void handleCancelButton(ActionEvent e) {
-
+        try {
+            App.goTo(App.getPreviousPage());
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML private void handleSaveButton(ActionEvent e) {
-
+        Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), null, null);
+        
+        try {
+            Database.insertTour(tour);
+        } catch(Exception ex) {
+            new Alert(AlertType.ERROR, ex.getMessage()).show();
+        }
+        
     }
 
 }
