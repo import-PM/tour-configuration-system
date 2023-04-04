@@ -63,8 +63,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0" />
-            <AnchorPane fx:id="hotelItemList1" layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0">
+            <Pane layoutX="55.0" layoutY="165.0">
                <children>
                    <Pane fx:id="separator1_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                    <ImageView fx:id="typeImageView1" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
@@ -87,9 +86,10 @@
                            <Font size="24.0" />
                        </font>
                    </Label>
-               </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList2" layoutX="55.0" layoutY="225.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="225.0">
+               <children>
                     <Pane fx:id="separator2_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView2" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator2_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -111,9 +111,10 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList3" layoutX="55.0" layoutY="285.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="285.0">
+               <children>
                     <Pane fx:id="separator3_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView3" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator3_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -135,9 +136,10 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList4" layoutX="55.0" layoutY="345.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="345.0">
+               <children>
                     <Pane fx:id="separator4_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView4" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator4_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -159,9 +161,10 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList5" layoutX="55.0" layoutY="405.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="405.0">
+               <children>
                     <Pane fx:id="separator5_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView5" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator5_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -183,9 +186,10 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList6" layoutX="55.0" layoutY="465.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="465.0">
+               <children>
                     <Pane fx:id="separator6_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView6" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator6_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -207,9 +211,10 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
-            <AnchorPane fx:id="hotelItemList7" layoutX="55.0" layoutY="525.0" prefHeight="50.0" prefWidth="1010.0">
-                <children>
+               </children>
+            </Pane>
+            <Pane layoutX="55.0" layoutY="525.0">
+               <children>
                     <Pane fx:id="separator7_1" layoutX="151.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <ImageView fx:id="typeImageView7" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator7_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
@@ -231,7 +236,8 @@
                             <Font size="24.0" />
                         </font>
                     </Label>
-                </children></AnchorPane>
+               </children>
+            </Pane>
             <Label fx:id="searchButtonLabel" layoutX="900.0" layoutY="120.0" maxHeight="20.0" onMouseClicked="#handleClickSearchButton" text="search">
                <font>
                   <Font size="20.0" />
