@@ -8,27 +8,39 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import org.importpm.controllers.enums.Page;
+
 /**
  * JavaFX App
  */
 public class App extends Application {
 
     private static Scene scene;
+    private static Page previousPage;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("fxml/primary"), 640, 480);
+        scene = new Scene(loadFXML(Page.PRIMARY.getFxmlPath()), 1366, 768);
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    public static void goTo(Page page) throws IOException {
+        scene.setRoot(loadFXML(page.getFxmlPath()));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml));
         return fxmlLoader.load();
+    }
+
+    public static void setPreviousPage(Page page) {
+        previousPage = page;
+    }
+
+    public static Page getPreviousPage() {
+        return previousPage;
     }
 
     public static void main(String[] args) {
