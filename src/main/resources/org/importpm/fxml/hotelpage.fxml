@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.HotelPageController">
     <children>
         <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="575.0" prefWidth="245.0" spacing="35.0" styleClass="background-section-sidebar">
             <children>
@@ -232,11 +232,6 @@
                         </font>
                     </Label>
                 </children></AnchorPane>
-            <HBox fx:id="underBarVBox" alignment="CENTER" layoutX="55.0" layoutY="590.0" prefHeight="50.0" prefWidth="1010.0">
-               <children>
-                  <Button fx:id="pageButton" mnemonicParsing="false" onAction="#handlePageButton" prefHeight="20.0" prefWidth="20.0" text="1" />
-               </children>
-            </HBox>
             <Label fx:id="searchButtonLabel" layoutX="900.0" layoutY="120.0" maxHeight="20.0" onMouseClicked="#handleClickSearchButton" text="search">
                <font>
                   <Font size="20.0" />
@@ -246,6 +241,15 @@
             <ComboBox fx:id="nameComboBox" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="300.0" />
             <ComboBox fx:id="ratingComboBox" layoutX="555.0" layoutY="125.0" prefHeight="20.0" prefWidth="145.0" />
             <ComboBox fx:id="priceComboBox" layoutX="725.0" layoutY="125.0" prefHeight="20.0" prefWidth="155.0" />
+            <HBox fx:id="underBarHBox" alignment="CENTER" layoutY="625.0" prefHeight="40.0" prefWidth="1080.0" spacing="20.0">
+               <children>
+                  <Button fx:id="firstPageButton" mnemonicParsing="false" onAction="#handleFirstPageButton" text="|&lt;" />
+                  <Button fx:id="previousPageButton" mnemonicParsing="false" onAction="#handlePreviousPageButton" text="&lt;" />
+                  <Label fx:id="pageNumberLabel" text="num" />
+                  <Button fx:id="nextPageButton" mnemonicParsing="false" onAction="#handleNextPageButton" text="&gt;" />
+                  <Button fx:id="lastPageButton" mnemonicParsing="false" onAction="#handleLastPageButton" text="&gt;|" />
+               </children>
+            </HBox>
          </children></AnchorPane>
     </children>
 </AnchorPane>
