@@ -16,6 +16,7 @@ import org.importpm.controllers.enums.Page;
 public class App extends Application {
 
     private static Scene scene;
+    private static Page previousPage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -32,6 +33,14 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml));
         return fxmlLoader.load();
+    }
+
+    public static void setPreviousPage(Page page) {
+        previousPage = page;
+    }
+
+    public static Page getPreviousPage() {
+        return previousPage;
     }
 
     public static void main(String[] args) {
