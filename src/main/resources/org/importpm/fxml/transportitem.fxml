@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="transportAnchorPane" prefHeight="69.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.Transportitem">
+<AnchorPane fx:id="transportAnchorPane" prefHeight="69.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.TransportItemController">
    <children>
       <Pane fx:id="backgroundPane" layoutX="30.0" prefHeight="69.0" prefWidth="627.0">
          <children>
