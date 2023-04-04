@@ -18,7 +18,7 @@ public class Tour {
     private LocalDate endDate;
 
     private List<Tourist> tourists;
-    private List<Hotel> places;
+    private Hotel places;
     private List<Transportation> transportations;
     private Quotation quotation;
     private TravelInsurance travelInsurance;
@@ -33,7 +33,6 @@ public class Tour {
         this.endDate = endDate;
 
         this.tourists = new ArrayList<Tourist>();
-        this.places = new ArrayList<Hotel>();
         this.transportations = new ArrayList<Transportation>();
     }
 
@@ -85,12 +84,12 @@ public class Tour {
         return this.tourists.remove(tourist);
     }
 
-    public boolean addPlace(Hotel place) {
-        return this.places.add(place);
+    public Hotel getHotel() {
+        return places;
     }
 
-    public boolean removePlace(Hotel place) {
-        return this.places.remove(place);
+    public void setHotel(Hotel places) {
+        this.places = places;
     }
 
     public boolean addTransportation(Transportation transportation) {

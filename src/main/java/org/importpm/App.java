@@ -10,6 +10,7 @@ import java.io.IOException;
 
 import org.importpm.controllers.enums.Page;
 import org.importpm.models.Hotel;
+import org.importpm.models.Tour;
 
 /**
  * JavaFX App
@@ -19,6 +20,7 @@ public class App extends Application {
     private static Scene scene;
     private static Page previousPage;
     private static Hotel selectedHotel;
+    private static Tour selectedTour;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -47,6 +49,14 @@ public class App extends Application {
 
     public static Hotel getSelectedHotel() {
         return selectedHotel;
+    }
+
+    public static void setSelectedTour(Tour selectedTour) {
+        App.selectedTour = selectedTour;
+    }
+
+    public static Tour getSelectedTour() {
+        return selectedTour;
     }
 
     public static void setSelectedHotel(Hotel selectedHotel) {
