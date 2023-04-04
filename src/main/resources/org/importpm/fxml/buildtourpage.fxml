@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Group?>
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -16,14 +20,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" styleClass="background-main" stylesheets="@../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
    <children>
-      <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="562.0" prefWidth="246.0" spacing="35.0">
+      <VBox fx:id="sidebar" alignment="CENTER" layoutY="185.0" prefHeight="562.0" prefWidth="246.0" spacing="35.0">
          <children>
-            <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
-            <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
-            <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" text="Button" />
-            <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" text="Button" />
+            <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" prefWidth="200.0" styleClass="btn-sidebar-build" text="สร้างรายการ">
+               <font>
+                  <Font size="24.0" />
+               </font></Button>
+            <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar" text="Button" />
+            <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" styleClass="btn-sidebar" text="Button" />
+            <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" styleClass="btn-sidebar" text="Button" />
             <Pane prefHeight="242.0" prefWidth="246.0" />
             <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="3.0">
                <children>
@@ -41,9 +48,9 @@
          </children>
       </VBox>
       <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" styleClass="background-section-option" stylesheets="@../../../style/style-user-interface.css">
          <children>
-            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" text="สร้างรายการ">
+            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="สร้างรายการ">
                <font>
                   <Font size="36.0" />
                </font>
@@ -53,7 +60,12 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="nameLabel" layoutX="225.0" layoutY="100.0" text="ชื่อ-นามสกุล">
+            <Label fx:id="nameLabel" layoutX="225.0" layoutY="100.0" text="ชื่อ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="surnameLabel" layoutX="400.0" layoutY="100.0" text="นามสกุล">
                <font>
                   <Font size="24.0" />
                </font>
@@ -108,43 +120,34 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <MenuButton fx:id="nameTitleMenuButton" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="MenuButton">
+            <MenuButton fx:id="nameTitle" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" text="MenuButton">
               <items>
                   <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" onAction="#handleMisterMenuItem" text="นาย" />
                 <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" onAction="#handleMistressMenuItem" text="นาง" />
                 <MenuItem fx:id="missMenuitem" mnemonicParsing="false" onAction="#handleMissMenuItem" text="นางสาว" />
               </items>
             </MenuButton>
-            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="26.0" prefWidth="424.0" />
+            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" />
+            <TextField fx:id="surnameTextField" layoutX="400.0" layoutY="140.0" prefHeight="25.0" prefWidth="250.0" />
             <TextField fx:id="emailTextField" layoutX="675.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" />
-            <TextField fx:id="phoneNumberTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" />
-            <TextArea fx:id="detailTextArea" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" />
+            <TextField fx:id="phoneNumTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" />
+            <TextArea fx:id="detailTextField" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" />
             <TextField fx:id="locationTextField" layoutX="230.0" layoutY="370.0" prefHeight="25.0" prefWidth="150.0" />
             <TextField fx:id="budgetTextField" layoutX="230.0" layoutY="470.0" prefHeight="20.0" prefWidth="150.0" />
             <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" />
-            <Group layoutX="235.0" layoutY="555.0">
-               <children>
-                  <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" text="รับ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton fx:id="denyRadioButton" layoutX="85.0" mnemonicParsing="false" text="ไม่รับ">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-            </Group>
-            <Button fx:id="saveButton" layoutX="940.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Button" />
-            <Button fx:id="cancelButton" layoutX="860.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleCacelButton" text="Button" />
-            <DatePicker fx:id="startDatePicker" layoutX="604.0" layoutY="420.0" />
-            <DatePicker fx:id="endDatePicker" layoutX="825.0" layoutY="420.0" />
-            <Label fx:id="hyphenLabel" layoutX="797.0" layoutY="415.0" text="-" textAlignment="CENTER">
+            <RadioButton fx:id="acceptRadiobutton" layoutX="235.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleAcceptRadioButton" text="รับ">
                <font>
                   <Font size="24.0" />
                </font>
-            </Label>
+            </RadioButton>
+            <RadioButton fx:id="denyRadiobutton" layoutX="320.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleDenyRadioButton" text="ไม่รับ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </RadioButton>
+            <AnchorPane fx:id="startDateToEndDatePane" layoutX="652.0" layoutY="418.0" prefHeight="220.0" prefWidth="300.0" />
+            <Button fx:id="saveButtonLabel" layoutX="940.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Button" />
+            <Button fx:id="cancelButtonLabel" layoutX="860.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleCacelButton" text="Button" />
          </children>
       </AnchorPane>
    </children>
