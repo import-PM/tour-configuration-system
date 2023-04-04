@@ -10,10 +10,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public abstract class AbstractPageController {
-    @FXML private Button buildTourButton;
-    @FXML private Button hotelButton;
-    @FXML private Button transportButton;
-    @FXML private Button tourListButton;
+    @FXML protected Button buildTourButton;
+    @FXML protected Button hotelButton;
+    @FXML protected Button transportButton;
+    @FXML protected Button tourListButton;
 
     @FXML
     protected void handleBuildtourButton(ActionEvent e) {

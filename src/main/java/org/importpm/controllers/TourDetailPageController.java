@@ -15,30 +15,30 @@ import javafx.scene.image.ImageView;
 
 public class TourDetailPageController extends AbstractPageController {
     
-    @FXML private Label nameLabel;
-    @FXML private Label emailLabel;
-    @FXML private Label telLabel;
-    @FXML private Label detailLabel;
-    @FXML private Label locationLabel;
-    @FXML private Label customerLabel;
-    @FXML private Label budgetLabel;
-    @FXML private ImageView typeimageview;
-    @FXML private Label namehotellabel;
-    @FXML private ImageView ratingimageview;
-    @FXML private Label priceLabel;
+    @FXML protected Label nameLabel;
+    @FXML protected Label emailLabel;
+    @FXML protected Label telLabel;
+    @FXML protected Label detailLabel;
+    @FXML protected Label locationLabel;
+    @FXML protected Label customerLabel;
+    @FXML protected Label budgetLabel;
+    @FXML protected ImageView typeimageview;
+    @FXML protected Label namehotellabel;
+    @FXML protected ImageView ratingimageview;
+    @FXML protected Label priceLabel;
 
-    private Tour tour;
+    protected Tour tour;
     
     public TourDetailPageController() {
         tour = App.getSelectedTour();
         initialize();
     }
 
-    private void initialize() {
+    protected void initialize() {
         setValues();
     }
 
-    private void setValues() {
+    protected void setValues() {
         // TODO: More Information Needed
         nameLabel.setText(null);
         emailLabel.setText(null);
@@ -56,7 +56,7 @@ public class TourDetailPageController extends AbstractPageController {
     }
 
     @FXML
-    private void handleBackPageButton(ActionEvent e) {
+    protected void handleBackPageButton(ActionEvent e) {
         try {
             App.goTo(App.getPreviousPage());
         } catch (IOException e1) {
