@@ -1,7 +1,9 @@
 package org.importpm.databases;
 
 import java.sql.*;
+import java.util.List;
 
+import org.importpm.models.Hotel;
 import org.importpm.models.Tour;
 
 public class Database {
@@ -80,7 +82,10 @@ public class Database {
         }
     }
     
-    // Insert Tour
+    // Insert Tour to the Database
     public static boolean insertTour(Tour tour);
+
+    // Query All Hotels in the Database
+    public static List<Hotel> selectAllHotels();
 
 }

@@ -19,8 +19,8 @@ public class Tour {
 
     private List<Tourist> tourists;
     private List<Hotel> places;
-    private List<Quotation> quotations;
     private List<Transportation> transportations;
+    private Quotation quotation;
     private TravelInsurance travelInsurance;
 
     public Tour(String description, String province, TourStatus status, int touristAmount, double budget, LocalDate startDate, LocalDate endDate) {
@@ -34,7 +34,6 @@ public class Tour {
 
         this.tourists = new ArrayList<Tourist>();
         this.places = new ArrayList<Hotel>();
-        this.quotations = new ArrayList<Quotation>();
         this.transportations = new ArrayList<Transportation>();
     }
 
@@ -74,6 +73,10 @@ public class Tour {
         return travelInsurance;
     }
 
+    public Quotation getQuotation() {
+        return quotation;
+    }
+
     public boolean addTourist(Tourist tourist) {
         return this.tourists.add(tourist);
     }
@@ -90,14 +93,6 @@ public class Tour {
         return this.places.remove(place);
     }
 
-    public boolean addQuotation(Quotation quotation) {
-        return this.quotations.add(quotation);
-    }
-
-    public boolean removeQuotation(Quotation quotation) {
-        return this.quotations.remove(quotation);
-    }
-
     public boolean addTransportation(Transportation transportation) {
         return this.transportations.add(transportation);
     }
@@ -108,6 +103,10 @@ public class Tour {
 
     public void setTravelInsurance(TravelInsurance travelInsurance) {
         this.travelInsurance = travelInsurance;
+    }
+
+    public void setQuotation(Quotation quotation) {
+        this.quotation = quotation;
     }
 
     public void setId(int id) {
