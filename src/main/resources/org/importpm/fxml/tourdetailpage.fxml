@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="background" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" styleClass="background-main" stylesheets="@../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+   <children>
+      <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="200.0" prefWidth="100.0" spacing="35.0">
+         <children>
+            <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
+            <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
+            <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" text="Button" />
+            <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" text="Button" />
+            <Button fx:id="tourDetail_button" mnemonicParsing="false" onAction="#handleTourDetailButton" text="Button" />
+         </children>
+      </VBox>
+      <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+      <ScrollPane layoutX="245.0" layoutY="34.0" prefHeight="686.0" prefWidth="1100.0">
+         <content>
+            <AnchorPane fx:id="fieldpane" prefHeight="945.0" prefWidth="1084.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label fx:id="headerlabel" layoutX="112.0" layoutY="15.0" text="Tour ID">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="namelDataLbel" layoutX="98.0" layoutY="100.0" text="ชื่อ-นามสกุล">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailDataLabel" layoutX="448.0" layoutY="100.0" text="Email">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="phoneNumDataLabel" layoutX="623.0" layoutY="100.0" text="เบอร์โทรศัพท์">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="detailDataLabel" layoutX="80.0" layoutY="200.0" text="รายละเอียด">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="locationDataLabel" layoutX="80.0" layoutY="365.0" prefHeight="25.0" prefWidth="140.0" text="จังหวัด/สถานที่">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="customerCountDataLabel" layoutX="80.0" layoutY="415.0" prefHeight="25.0" text="จำนวนลูกทัวร์">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="customercountunitDataLabel" layoutX="385.0" layoutY="415.0" onDragDetected="#DaTa" text="คน">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="budgetDataLabel" layoutX="80.0" layoutY="465.0" onDragDetected="#Data" text="งบประมาณ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="budgetunitDataLabel" layoutX="385.0" layoutY="465.0" text="บาท">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="startDateToEndDateLabel" layoutX="806.0" layoutY="29.0" text="วันที่เริ่มต้น-วันสิ้นสุด">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="startdatetoenddatepane" layoutX="804.0" layoutY="76.0" prefHeight="170.0" prefWidth="232.0" />
+                  <Label fx:id="nameLabel" layoutX="98.0" layoutY="143.0" text="Label" />
+                  <Label fx:id="emailLabel" layoutX="455.0" layoutY="143.0" text="Label" />
+                  <Label fx:id="telLabel" layoutX="623.0" layoutY="143.0" text="Label" />
+                  <Label fx:id="detailLabel" layoutX="98.0" layoutY="242.0" text="Label" />
+                  <Label fx:id="locationLabel" layoutX="230.0" layoutY="374.0" text="Label" />
+                  <Label fx:id="customerLabel" layoutX="230.0" layoutY="424.0" text="Label" />
+                  <Label fx:id="budgetLabel" layoutX="230.0" layoutY="474.0" text="Label" />
+                  <Label fx:id="detailDataLabel" layoutX="78.0" layoutY="510.0" text="รายละเอียดที่พัก">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="cardpane" layoutX="59.0" layoutY="552.0" prefHeight="50.0" prefWidth="1010.0">
+                     <children>
+                        <Pane fx:id="separator1" layoutX="159.0" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
+                        <ImageView fx:id="typeimageview" fitHeight="48.0" fitWidth="48.0" layoutX="52.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                        <Pane fx:id="separator2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
+                        <Pane fx:id="separator3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
+                        <ImageView fx:id="ratingimageview" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="namehotellabel" layoutX="170.0" layoutY="7.5" text="name">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="unitlabel" layoutX="825.0" layoutY="9.5" text="บาท">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="pricelabel" layoutX="675.0" layoutY="7.5" text="price">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="transportDataLabel" layoutX="76.0" layoutY="613.0" text="การเดินทาง">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="priceDataLabel" layoutX="737.0" layoutY="510.0" text="ราคา">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="insuranceDataLabel" layoutX="784.0" layoutY="614.0" text="ประกันอุบัติเหตุ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="placeNameDataLabel" layoutX="273.0" layoutY="510.0" text="ชื่อ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalDataLabel" layoutX="84.0" layoutY="866.0" text="รวม">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalLabel" layoutX="178.0" layoutY="870.0" text="total">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="unitlabel" layoutX="334.0" layoutY="865.0" text="บาท">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="savebutton" layoutX="980.0" layoutY="868.0" mnemonicParsing="false" onAction="#handleSaveButton" text="Button" />
+                  <Button fx:id="handleBackPageButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" text="Back" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
