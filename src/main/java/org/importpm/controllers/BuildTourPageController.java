@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
@@ -32,6 +33,8 @@ public class BuildTourPageController extends AbstractPageController {
     @FXML private RadioButton denyRadioButton;
     @FXML private Button cancelButton;
     @FXML private Button saveButton;
+    @FXML private DatePicker startDatePicker;
+    @FXML private DatePicker endDatePicker;
 
     public BuildTourPageController() {
         initialize();
@@ -57,7 +60,7 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     @FXML private void handleSaveButton(ActionEvent e) {
-        Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), null, null);
+        Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
         
         try {
             Database.insertTour(tour);
