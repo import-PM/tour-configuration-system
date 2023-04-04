@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.layout.Pane?>
 <AnchorPane fx:id="backgroundAnchorPane" maxHeight="768.0" maxWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
     <children>
         <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="455.0" prefWidth="245.0" spacing="35.0">
@@ -20,14 +21,21 @@
                 <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
                 <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" text="Button" />
                 <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" text="Button" />
-            <HBox fx:id="themeHBox" alignment="CENTER" prefHeight="104.0" prefWidth="246.0" spacing="35.0">
-               <children>
-                  <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-               </children>
-            </HBox>
+                <Pane fx:id="sideBarSpacePane" prefHeight="245.0" prefWidth="245.0" />
+                <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="4.0">
+                    <children>
+                        <Pane fx:id="themeSpacePane" prefHeight="26.0" prefWidth="4.0" />
+                        <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                        <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                    </children>
+                </HBox>
+                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
             </children>
         </VBox>
         <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />

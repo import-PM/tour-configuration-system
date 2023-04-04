@@ -7,10 +7,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="69.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.Transportitem">
+<AnchorPane fx:id="transportAnchorPane" prefHeight="69.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.Transportitem">
    <children>
-      <Pane layoutX="30.0" prefHeight="69.0" prefWidth="627.0">
+      <Pane fx:id="backgroundPane" layoutX="30.0" prefHeight="69.0" prefWidth="627.0">
          <children>
             <ImageView fx:id="typeImageView" fitHeight="69.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="sizeLabel" layoutX="262.0" layoutY="17.0" text="Label">
@@ -18,24 +17,24 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="capacity" layoutX="381.0" layoutY="17.0" text="Label">
+            <Label fx:id="capacityLabel" layoutX="381.0" layoutY="17.0" text="Label">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="557.0" layoutY="17.0" text="Label">
+            <Label fx:id="priceLabel" layoutX="557.0" layoutY="17.0" text="Label">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label layoutX="702.0" layoutY="17.0" text="Label">
+      <Label fx:id="amountTextLabel" layoutX="702.0" layoutY="17.0" text="จำนวน">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="928.0" layoutY="17.0" text="Label">
+      <Label fx:id="unitLabel" layoutX="928.0" layoutY="17.0" text="คัน">
          <font>
             <Font size="24.0" />
          </font>
