@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
@@ -16,7 +22,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
    <children>
       <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="575.0" prefWidth="245.0" spacing="35.0" styleClass="background-section-sidebar">
          <children>
@@ -34,7 +40,7 @@
                   <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
                </children>
             </HBox>
-            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" styleClass="btn-sidebar-logout" text="ออกจากระบบ">
                <font>
                   <Font size="14.0" />
                </font>
@@ -42,103 +48,103 @@
          </children>
       </VBox>
       <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" styleClass="background-section-option">
          <children>
             <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="สร้างรายการ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="nameTitleLabel" layoutX="80.0" layoutY="100.0" styleClass="title-color-on-page" text="คำนำหน้าชื่อ">
+            <Label fx:id="nameTitleLabel" layoutX="80.0" layoutY="100.0" styleClass="title-on-page" text="คำนำหน้าชื่อ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="nameLabel" layoutX="225.0" layoutY="100.0" styleClass="title-color-on-page" text="ชื่อ-นามสกุล">
+            <Label fx:id="nameLabel" layoutX="225.0" layoutY="100.0" styleClass="title-on-page" text="ชื่อ-นามสกุล">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabel" layoutX="675.0" layoutY="100.0" styleClass="title-color-on-page" text="Email">
+            <Label fx:id="emailLabel" layoutX="675.0" layoutY="100.0" styleClass="title-on-page" text="Email">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="phoneNumLabel" layoutX="850.0" layoutY="100.0" styleClass="title-color-on-page" text="เบอร์โทรศัพท์">
+            <Label fx:id="phoneNumLabel" layoutX="850.0" layoutY="100.0" styleClass="title-on-page" text="เบอร์โทรศัพท์">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="detailLabel" layoutX="80.0" layoutY="200.0" styleClass="title-color-on-page" text="รายละเอียด">
+            <Label fx:id="detailLabel" layoutX="80.0" layoutY="200.0" styleClass="title-on-page" text="รายละเอียด">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="locationLabel" layoutX="80.0" layoutY="365.0" prefHeight="25.0" prefWidth="140.0" styleClass="title-color-on-page" text="จังหวัด/สถานที่">
+            <Label fx:id="locationLabel" layoutX="80.0" layoutY="365.0" prefHeight="25.0" prefWidth="140.0" styleClass="title-on-page" text="จังหวัด/สถานที่">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="customerCountLabel" layoutX="80.0" layoutY="415.0" prefHeight="25.0" styleClass="title-color-on-page" text="จำนวนลูกทัวร์">
+            <Label fx:id="customerCountLabel" layoutX="80.0" layoutY="415.0" prefHeight="25.0" styleClass="title-on-page" text="จำนวนลูกทัวร์">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="customerCountUnitLabel" layoutX="385.0" layoutY="415.0" styleClass="title-color-on-page" text="คน">
+            <Label fx:id="customerCountUnitLabel" layoutX="385.0" layoutY="415.0" styleClass="title-on-page" text="คน">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="budgetLabel" layoutX="80.0" layoutY="465.0" styleClass="title-color-on-page" text="งบประมาณ">
+            <Label fx:id="budgetLabel" layoutX="80.0" layoutY="465.0" styleClass="title-on-page" text="งบประมาณ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="budgetUnitLabel" layoutX="385.0" layoutY="465.0" styleClass="title-color-on-page" text="บาท">
+            <Label fx:id="budgetUnitLabel" layoutX="385.0" layoutY="465.0" styleClass="title-on-page" text="บาท">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="insuranceLabel" layoutX="80.0" layoutY="555.0" styleClass="title-color-on-page" text="ประกันอุบัติเหตุ">
+            <Label fx:id="insuranceLabel" layoutX="80.0" layoutY="555.0" styleClass="title-on-page" text="ประกันอุบัติเหตุ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="startDateToEndDateLabel" layoutX="700.0" layoutY="370.0" styleClass="title-color-on-page" text="วันที่เริ่มต้น-วันสิ้นสุด">
+            <Label fx:id="startDateToEndDateLabel" layoutX="700.0" layoutY="370.0" styleClass="title-on-page" text="วันที่เริ่มต้น-วันสิ้นสุด">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <MenuButton fx:id="nameTitleMenuButton" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="เลือก...">
+            <MenuButton fx:id="nameTitleMenuButton" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" styleClass="title-on-page" text="เลือก...">
               <items>
                   <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" onAction="#handleMisterMenuItem" text="นาย" />
                 <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" onAction="#handleMistressMenuItem" text="นาง" />
                 <MenuItem fx:id="missMenuitem" mnemonicParsing="false" onAction="#handleMissMenuItem" text="นางสาว" />
               </items>
             </MenuButton>
-            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="26.0" prefWidth="424.0" styleClass="text-field-color" />
-            <TextField fx:id="emailTextField" layoutX="675.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextField fx:id="phoneNumberTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextArea fx:id="detailTextArea" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" styleClass="text-area-color" />
-            <TextField fx:id="locationTextField" layoutX="230.0" layoutY="370.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextField fx:id="budgetTextField" layoutX="230.0" layoutY="470.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-color" />
-            <Group layoutX="235.0" layoutY="555.0">
+            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="26.0" prefWidth="424.0" styleClass="text-field-set" />
+            <TextField fx:id="emailTextField" layoutX="675.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
+            <TextField fx:id="phoneNumberTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
+            <TextArea fx:id="detailTextArea" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" styleClass="text-area-set" />
+            <TextField fx:id="locationTextField" layoutX="230.0" layoutY="370.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
+            <TextField fx:id="budgetTextField" layoutX="230.0" layoutY="470.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
+            <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
+            <Group layoutX="235.0" layoutY="555.0" styleClass="btn-radio">
                <children>
-                  <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" text="รับ">
+                  <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" styleClass="btn-radio" text="รับ">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="denyRadioButton" layoutX="85.0" mnemonicParsing="false" text="ไม่รับ">
+                  <RadioButton fx:id="denyRadioButton" layoutX="85.0" mnemonicParsing="false" styleClass="btn-radio" text="ไม่รับ">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </RadioButton>
                </children>
             </Group>
-            <Button fx:id="saveButton" layoutX="940.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleSaveButton" text="บันทึก" />
-            <Button fx:id="cancelButton" layoutX="860.0" layoutY="645.0" mnemonicParsing="false" onAction="#handleCancelButton" text="ยกเลิก" />
+            <Button fx:id="saveButton" layoutX="887.0" layoutY="633.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
+            <Button fx:id="cancelButton" layoutX="38.0" layoutY="635.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ยกเลิก" />
             <DatePicker fx:id="startDatePicker" layoutX="604.0" layoutY="420.0" />
             <DatePicker fx:id="endDatePicker" layoutX="825.0" layoutY="420.0" />
             <Label fx:id="hyphenLabel" layoutX="797.0" layoutY="415.0" text="-" textAlignment="CENTER">

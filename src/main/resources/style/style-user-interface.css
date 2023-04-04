@@ -19,13 +19,14 @@
     btn-sidebar-tourList        : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-insurance       : rgba(0,0,0,0.5); /* transparent */
     btn-color-default           : #1E4BCA; /* Blue */
-    btn-color-cancel            : #FF0000; /* Red */
+    btn-color-cancel            : #D2D2D2; /* Gray */
 
     /* Text */
     header-color                : #000000; /* Black */
     title-color-btn-sidebar     : #ffffff; /* white */
     title-btn-hotel-choose      : #ffffff; /* White */
     title-btn-default           : #ffffff; /* White */
+    title-btn-cancal            : #000000; /* Black */
     title-color-on-page         : #000000; /* Black */
     title-on-btn-radio          : #000000; /* Black */
     title-color-price           : #FF0000; /* Red */
@@ -80,7 +81,6 @@
 .btn-sidebar:hover {
     -fx-background-color: btn-sidebar-all;
     -fx-text-fill: main-color;
-
 }
 
 .btn-sidebar-build {
@@ -123,6 +123,21 @@
     -fx-border-radius: 50px;
 }
 
+.btn-sidebar-logout {
+    -fx-background-color: btn-sidebar-build;
+    -fx-text-fill: title-color-btn-sidebar;
+    -fx-font-size: 24;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+    -fx-pref-width: 200;
+    -fx-pref-height: 50;
+}
+
+.btn-sidebar-logout:hover {
+    -fx-background-color: btn-sidebar-all;
+    -fx-text-fill: main-color;
+}
+
 .btn-hotel-choose {
     -fx-background-color: btn-color-defualt;
     -fx-text-fill: title-btn-hotel-choose;
@@ -133,15 +148,21 @@
 .btn-app-default {
     -fx-background-color: btn-color-default;
     -fx-text-fill: title-btn-default;
-    -fx-font-size: 12;
-    -fx-border-radius: 5;
+    -fx-font-size: 16;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
 }
 
 .btn-app-cancel {
     -fx-background-color: btn-color-cancel;
-    -fx-text-fill: title-btn-default;
-    -fx-font-size: 12;
-    -fx-border-radius: 5;
+    -fx-text-fill: title-btn-cancel;
+    -fx-font-size: 16;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
 }
 
 .btn-page {
@@ -153,7 +174,7 @@
 
 .btn-radio {
     -fx-text-fill: title-on-btn-radio;
-    -fx-font-size: 24;
+    -fx-font-size: 16;
     -fx-border-radius: 20;
 }
 
