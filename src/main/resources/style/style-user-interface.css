@@ -2,23 +2,24 @@
     /* Color Mix */
     main-color                  : #0A8270; /* Pine Green */
     sub-color                   : #95FF87; /* Mint Green */
-    btn-color                   : #02457A; /* Dark Cerulean */
+    btn-color                   : #1E4BCA; /* Blue */
 
     /* Layout */
     background-section-main     : #0A8270; /* Pine Green */
     background-section-sidebar  : #0A8270; /* Pine Green */
     background-section-option   : #ffffff; /* White */
-    background-text-field       : #D2D2D2; /* White */
+    background-text-field       : #ffffff; /* White */
     background-text-area        : #ffffff; /* White */
 
     /* Button */
     btn-sidebar-all             : #ffffff; /* White */
-    btn-sidebar-build           : rgba(0,0,0,0.5); /* transparent */
+    btn-sidebar-build           : rgba(0,0,0,0); /* transparent */
     btn-sidebar-hotel           : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-transport       : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-tourList        : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-insurance       : rgba(0,0,0,0.5); /* transparent */
-    btn-color-defual            : #02457A; /* Dark Cerulean */
+    btn-color-default           : #1E4BCA; /* Blue */
+    btn-color-cancel            : #FF0000; /* Red */
 
     /* Text */
     header-color                : #000000; /* Black */
@@ -26,9 +27,13 @@
     title-btn-hotel-choose      : #ffffff; /* White */
     title-btn-default           : #ffffff; /* White */
     title-color-on-page         : #000000; /* Black */
+    title-on-btn-radio          : #000000; /* Black */
     title-color-price           : #FF0000; /* Red */
     text-color-on-text-field    : #000000; /* Black */
     text-color-on-text-area     : #000000; /* Black */
+    text-area-border            : #D2D2D2; /* Gray */
+    text-field-border           : #D2D2D2; /* Gray */
+
 
 }
 
@@ -44,12 +49,16 @@
 
 .background-section-sidebar {
     -fx-background-color: backround-section-sidebar;
+    -fx-pref-width: 300;
 }
 
 .background-section-option {
     -fx-background-color: background-section-option;
     -fx-background-radius: 30px;
     -fx-border-radius: 30px;
+    -fx-pref-width: 600;
+    -fx-pref-height: auto;
+    -fx-translate-x: 70;
 }
 
 /* <--------------------------------------------------------------------------> */
@@ -57,12 +66,21 @@
 /* <--------Buttons Function--------------------------------------------------> */
 
 .btn-sidebar {
-    -fx-pref-width: 40;
-    -fx-background-color: btn-sidebar-all;
-    -fx-text-fill: main-color;
+    -fx-text-alignment: LEFT;
+    -fx-background-color: btn-sidebar-build;
+    -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 24;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
+    -fx-pref-width: 200;
+    -fx-pref-height: 50;
+    -fx-translate-x: 60;
+}
+
+.btn-sidebar:hover {
+    -fx-background-color: btn-sidebar-all;
+    -fx-text-fill: main-color;
+
 }
 
 .btn-sidebar-build {
@@ -119,10 +137,23 @@
     -fx-border-radius: 5;
 }
 
+.btn-app-cancel {
+    -fx-background-color: btn-color-cancel;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 12;
+    -fx-border-radius: 5;
+}
+
 .btn-page {
     -fx-background-color: btn-color-default;
     -fx-text-fill: title-btn-default;
     -fx-font-size: 12;
+    -fx-border-radius: 20;
+}
+
+.btn-radio {
+    -fx-text-fill: title-on-btn-radio;
+    -fx-font-size: 24;
     -fx-border-radius: 20;
 }
 
@@ -137,25 +168,28 @@
 }
 
 /* title */
-.title-color-on-page {
+.title-on-page {
     -fx-text-fill: title-color-on-page;
-    -fx-font-size: 24;
+    -fx-font-size: 16;
 }
 
-.title-color-price {
+.title-price {
     -fx-text-fill: title-color-price;
     -fx-font-size: 12;
 }
 
-.text-field-color {
+.text-field-set {
     -fx-background-color: background-text-field;
     -fx-text-fill : text-color-on-text-field;
     -fx-font-size: 12;
+    -fx-border-color: text-field-border;
 }
 
-.text-area-color {
+.text-area-set {
     -fx-background-color: background-text-area;
     -fx-text-fill : text-color-on-text-area;
     -fx-font-size: 12;
+    -fx-border-color: text-area-border;
+    -fx-pref-width: 800;
 }
 /* <--------------------------------------------------------------------------> */
