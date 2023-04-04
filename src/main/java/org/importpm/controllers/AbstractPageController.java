@@ -16,7 +16,7 @@ public abstract class AbstractPageController {
     @FXML private Button tourListButton;
 
     @FXML
-    public void handleBuildTourButton(ActionEvent e) {
+    protected void handleBuildtourButton(ActionEvent e) {
         try {
             App.goTo(Page.BUILD_TOUR);
         } catch (IOException e1) {
@@ -26,7 +26,7 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleHotelButton(ActionEvent e) {
+    protected void handleHotelButton(ActionEvent e) {
         try {
             App.goTo(Page.HOTEL);
         } catch (IOException e1) {
@@ -36,7 +36,7 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleTransportButton(ActionEvent e) {
+    protected void handleTransportButton(ActionEvent e) {
         try {
             App.goTo(Page.TRANSPORT);
         } catch (IOException e1) {
@@ -46,13 +46,18 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleTourListButton(ActionEvent e) {
+    protected void handleTourListButton(ActionEvent e) {
         try {
             App.goTo(Page.TOUR_LIST);
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void handleExitButton(ActionEvent e) {
+        System.exit(0);
     }
 
 }
