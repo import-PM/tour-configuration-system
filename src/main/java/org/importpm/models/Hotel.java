@@ -2,7 +2,7 @@ package org.importpm.models;
 
 import org.importpm.models.enums.PlaceType;
 
-public class Place {
+public class Hotel {
     private int id;
     private String name;
     private double price;
@@ -11,7 +11,7 @@ public class Place {
 
     private double fixedPrice;
 
-    public Place(String name, double price, PlaceType type, int rate) {
+    public Hotel(String name, double price, PlaceType type, int rate) {
         this.name = name;
         this.price = price;
         this.type = type;

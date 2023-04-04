@@ -18,7 +18,7 @@ public class Tour {
     private LocalDate endDate;
 
     private List<Tourist> tourists;
-    private List<Place> places;
+    private List<Hotel> places;
     private List<Quotation> quotations;
     private List<Transportation> transportations;
     private TravelInsurance travelInsurance;
@@ -33,7 +33,7 @@ public class Tour {
         this.endDate = endDate;
 
         this.tourists = new ArrayList<Tourist>();
-        this.places = new ArrayList<Place>();
+        this.places = new ArrayList<Hotel>();
         this.quotations = new ArrayList<Quotation>();
         this.transportations = new ArrayList<Transportation>();
     }
@@ -82,11 +82,11 @@ public class Tour {
         return this.tourists.remove(tourist);
     }
 
-    public boolean addPlace(Place place) {
+    public boolean addPlace(Hotel place) {
         return this.places.add(place);
     }
 
-    public boolean removePlace(Place place) {
+    public boolean removePlace(Hotel place) {
         return this.places.remove(place);
     }
 
