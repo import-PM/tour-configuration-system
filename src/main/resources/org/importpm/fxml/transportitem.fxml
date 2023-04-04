@@ -12,17 +12,17 @@
       <Pane fx:id="backgroundPane" layoutX="30.0" prefHeight="69.0" prefWidth="627.0">
          <children>
             <ImageView fx:id="typeImageView" fitHeight="69.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="sizeLabel" layoutX="262.0" layoutY="17.0" text="Label">
+            <Label fx:id="sizeLabel" layoutX="262.0" layoutY="17.0" text="size">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="capacityLabel" layoutX="381.0" layoutY="17.0" text="Label">
+            <Label fx:id="capacityLabel" layoutX="381.0" layoutY="17.0" text="capacity">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="priceLabel" layoutX="557.0" layoutY="17.0" text="Label">
+            <Label fx:id="priceLabel" layoutX="557.0" layoutY="17.0" text="price">
                <font>
                   <Font size="24.0" />
                </font>
@@ -39,7 +39,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="786.0" layoutY="9.0" prefHeight="25.0" prefWidth="119.0">
+      <TextField fx:id="amountTextField" layoutX="786.0" layoutY="9.0" prefHeight="25.0" prefWidth="119.0">
          <font>
             <Font size="24.0" />
          </font>

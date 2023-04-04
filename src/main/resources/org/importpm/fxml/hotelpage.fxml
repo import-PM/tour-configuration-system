@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #0A8270;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.fxml.BuildtourPage">
     <children>
-        <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="455.0" prefWidth="245.0" spacing="35.0">
+        <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="575.0" prefWidth="245.0" spacing="35.0" styleClass="background-section-sidebar">
             <children>
-                <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" text="Button" />
-                <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" text="Button" />
-                <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" text="Button" />
-                <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" text="Button" />
-                <Pane fx:id="sideBarSpacePane" prefHeight="245.0" prefWidth="245.0" />
+                <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar" text="สร้างรายการ" />
+                <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar" text="โรงแรมและที่พัก" />
+                <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" styleClass="btn-sidebar" text="การเดินทาง" />
+                <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" styleClass="btn-sidebar" text="รายการทัวร์" />
+            <Pane fx:id="sideBarSpacePane" prefHeight="245.0" prefWidth="245.0" />
                 <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="4.0">
                     <children>
                         <Pane fx:id="themeSpacePane" prefHeight="26.0" prefWidth="4.0" />
@@ -38,35 +38,31 @@
         <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
         <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" text="โรงแรมและที่พัก">
+            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="โรงแรมและที่พัก">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="typeLabel" layoutX="60.0" layoutY="90.0" text="ประเภทที่พัก">
+            <Label fx:id="typeLabel" layoutX="60.0" layoutY="90.0" styleClass="title-color-on-page" text="ประเภทที่พัก">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="typeTextField" layoutX="60.0" layoutY="125.0" prefHeight="25.0" prefWidth="135.0" />
-            <Label fx:id="nameLabel" layoutX="220.0" layoutY="90.0" text="ชื่อที่พัก">
+            <Label fx:id="nameLabel" layoutX="220.0" layoutY="90.0" styleClass="title-color-on-page" text="ชื่อที่พัก">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="nameTextField" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="300.0" />
-            <Label fx:id="ratingLabel" layoutX="555.0" layoutY="90.0" text="ระดับมาตรฐาน">
+            <Label fx:id="ratingLabel" layoutX="555.0" layoutY="90.0" styleClass="title-color-on-page" text="ระดับมาตรฐาน">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="ratingTextField" layoutX="555.0" layoutY="125.0" prefHeight="20.0" prefWidth="145.0" />
-            <Label fx:id="priceLabel" layoutX="725.0" layoutY="90.0" text="ช่วงราคา">
+            <Label fx:id="priceLabel" layoutX="725.0" layoutY="90.0" styleClass="title-color-on-page" text="ช่วงราคา">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="priceTextField" layoutX="725.0" layoutY="125.0" prefHeight="20.0" prefWidth="155.0" />
             <AnchorPane layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0" />
             <AnchorPane fx:id="hotelItemList1" layoutX="55.0" layoutY="165.0" prefHeight="50.0" prefWidth="1010.0">
                <children>
@@ -74,19 +70,19 @@
                    <ImageView fx:id="typeImageView1" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                    <Pane fx:id="separator1_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                    <Pane fx:id="separator1_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                   <Button fx:id="selectButton1" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton1" text="Button" />
+                   <Button fx:id="selectButton1" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton1" text="select" />
                    <ImageView fx:id="ratingImageView1" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                   <Label fx:id="nameLabel1" layoutX="170.0" layoutY="7.5" text="name">
+                   <Label fx:id="nameLabel1" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                        <font>
                            <Font size="24.0" />
                        </font>
                    </Label>
-                   <Label fx:id="unitLabel1" layoutX="825.0" layoutY="9.5" text="บาท">
+                   <Label fx:id="unitLabel1" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                        <font>
                            <Font size="20.0" />
                        </font>
                    </Label>
-                   <Label fx:id="priceLabel1" layoutX="675.0" layoutY="7.5" text="price">
+                   <Label fx:id="priceLabel1" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                        <font>
                            <Font size="24.0" />
                        </font>
@@ -98,19 +94,19 @@
                     <ImageView fx:id="typeImageView2" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator2_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator2_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton2" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton2" text="Button" />
+                    <Button fx:id="selectButton2" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton2" text="select" />
                     <ImageView fx:id="ratingImageView2" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel2" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel2" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel2" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel2" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel2" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel2" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -122,19 +118,19 @@
                     <ImageView fx:id="typeImageView3" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator3_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator3_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton3" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton3" text="Button" />
+                    <Button fx:id="selectButton3" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton3" text="select" />
                     <ImageView fx:id="ratingImageView3" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel3" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel3" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel3" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel3" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel3" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel3" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -146,19 +142,19 @@
                     <ImageView fx:id="typeImageView4" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator4_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator4_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton4" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton4" text="Button" />
+                    <Button fx:id="selectButton4" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton4" text="select" />
                     <ImageView fx:id="ratingImageView4" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel4" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel4" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel4" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel4" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel4" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel4" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -170,19 +166,19 @@
                     <ImageView fx:id="typeImageView5" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator5_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator5_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton5" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton5" text="Button" />
+                    <Button fx:id="selectButton5" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton5" text="select" />
                     <ImageView fx:id="ratingImageView5" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel5" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel5" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel5" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel5" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel5" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel5" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -194,19 +190,19 @@
                     <ImageView fx:id="typeImageView6" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator6_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator6_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton6" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton6" text="Button" />
+                    <Button fx:id="selectButton6" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton6" text="select" />
                     <ImageView fx:id="ratingImageView6" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel6" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel6" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel6" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel6" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel6" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel6" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -218,19 +214,19 @@
                     <ImageView fx:id="typeImageView7" fitHeight="48.0" fitWidth="48.0" layoutX="47.5" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
                     <Pane fx:id="separator7_2" layoutX="481.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
                     <Pane fx:id="separator7_3" layoutX="656.5" layoutY="2.0" prefHeight="46.0" prefWidth="2.0" style="-fx-background-color: #D2D2D2;" />
-                    <Button fx:id="selectButton7" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton7" text="Button" />
+                    <Button fx:id="selectButton7" layoutX="880.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleselectbutton7" text="select" />
                     <ImageView fx:id="ratingImageView7" fitHeight="40.0" fitWidth="160.0" layoutX="490.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-                    <Label fx:id="nameLabel7" layoutX="170.0" layoutY="7.5" text="name">
+                    <Label fx:id="nameLabel7" layoutX="170.0" layoutY="7.5" styleClass="title-color-on-page" text="name">
                         <font>
                             <Font size="24.0" />
                         </font>
                     </Label>
-                    <Label fx:id="unitLabel7" layoutX="825.0" layoutY="9.5" text="บาท">
+                    <Label fx:id="unitLabel7" layoutX="825.0" layoutY="9.5" styleClass="title-color-on-page" text="บาท">
                         <font>
                             <Font size="20.0" />
                         </font>
                     </Label>
-                    <Label fx:id="priceLabel7" layoutX="675.0" layoutY="7.5" text="price">
+                    <Label fx:id="priceLabel7" layoutX="675.0" layoutY="7.5" styleClass="title-color-price" text="price">
                         <font>
                             <Font size="24.0" />
                         </font>
@@ -246,11 +242,10 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <ComboBox fx:id="typeComboBox" layoutX="60.0" layoutY="125.0" prefHeight="25.0" prefWidth="135.0" />
+            <ComboBox fx:id="nameComboBox" layoutX="220.0" layoutY="125.0" prefHeight="25.0" prefWidth="300.0" />
+            <ComboBox fx:id="ratingComboBox" layoutX="555.0" layoutY="125.0" prefHeight="20.0" prefWidth="145.0" />
+            <ComboBox fx:id="priceComboBox" layoutX="725.0" layoutY="125.0" prefHeight="20.0" prefWidth="155.0" />
          </children></AnchorPane>
-        <Label fx:id="exitLabelButton" layoutX="20.0" layoutY="715.0" onMouseClicked="#handleClickExitButton" text="Exit">
-            <font>
-                <Font size="24.0" />
-            </font>
-        </Label>
     </children>
 </AnchorPane>
