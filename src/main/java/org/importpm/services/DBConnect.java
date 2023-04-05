@@ -461,7 +461,7 @@ public class DBConnect {
     public static void updateTourStatus(Tour tour) {
         try {
             queryUpdate("UPDATE tour\n" +
-                    "SET status='" + tour.getStatus() + "'\n" +
+                    "SET status='" + tour.getStatus().getStatus() + "'\n" +
                     "WHERE id=" + tour.getId());
         } catch (Exception e) {
             throw new RuntimeException(e);
