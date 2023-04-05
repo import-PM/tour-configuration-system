@@ -166,13 +166,13 @@
             <TextField fx:id="locationTextField" layoutX="172.0" layoutY="324.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
             <Label fx:id="customerCountLabel" layoutX="49.0" layoutY="369.0" prefHeight="25.0" styleClass="title-on-page" text="จำนวนลูกทัวร์">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Font" size="24.0" />
                </font>
             </Label>
             <TextField fx:id="customerTextField" layoutX="171.0" layoutY="371.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
             <Label fx:id="customerCountUnitLabel" layoutX="344.0" layoutY="374.0" styleClass="title-on-page" text="คน">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Font" size="24.0" />
                </font>
             </Label>
             <Label fx:id="insuranceLabel" layoutX="48.0" layoutY="474.0" styleClass="title-on-page" text="ประกันอุบัติเหตุ">
@@ -190,12 +190,15 @@
             <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-color" />
             <Group layoutX="235.0" layoutY="555.0">
                <children>
-                  <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" styleClass="btn-radio" text="รับ">
+                  <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" selected="true" styleClass="btn-radio" text="รับ">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="insurance" />
+                     </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="denyRadioButton" layoutX="85.0" mnemonicParsing="false" styleClass="btn-radio" text="ไม่รับ">
+                  <RadioButton fx:id="denyRadioButton" layoutX="85.0" mnemonicParsing="false" styleClass="btn-radio" text="ไม่รับ" toggleGroup="$insurance">
                      <font>
                         <Font size="24.0" />
                      </font>
