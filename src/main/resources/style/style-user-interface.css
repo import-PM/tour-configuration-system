@@ -13,6 +13,7 @@
 
     /* Button */
     btn-sidebar-hover           : #ffffff; /* White */
+    btn-app-default-hover       : #ffffff; /* White */
     btn-sidebar-build           : rgba(0,0,0,0); /* transparent */
     btn-sidebar-hotel           : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-transport       : rgba(0,0,0,0.5); /* transparent */
@@ -26,7 +27,7 @@
     title-color-btn-sidebar     : #ffffff; /* white */
     title-btn-hotel-choose      : #ffffff; /* White */
     title-btn-default           : #ffffff; /* White */
-    title-btn-cancal            : #000000; /* Black */
+    title-btn-cancel            : #000000; /* Black */
     title-color-on-page         : #000000; /* Black */
     title-on-btn-radio          : #000000; /* Black */
     title-color-price           : #FF0000; /* Red */
@@ -38,7 +39,7 @@
 
 @font-face {
     font-family: 'RSU';
-    src: url('RSU_Regular.ttf');
+    src: url('/font/RSU_Regular.ttf');
 }
 
 .text {
@@ -117,14 +118,15 @@
 .btn-sidebar-default {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
-    -fx-font-size: 24;
+    -fx-font-size: 20;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
-    -fx-pref-width: 350;
+    -fx-pref-width: 400;
     -fx-pref-height: 50;
+    -fx-translate-x: 20;
 }
 
-.btn-sidebar:hover {
+.btn-sidebar-default:hover {
     -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
 }
@@ -174,7 +176,7 @@
 .btn-sidebar-logout {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
-    -fx-font-size: 24;
+    -fx-font-size: 20;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
     -fx-pref-width: 200;
@@ -182,14 +184,14 @@
 }
 
 .btn-sidebar-logout:hover {
-    -fx-background-color: btn-sidebar-all;
+    -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
 }
 
 .btn-hotel-choose {
     -fx-background-color: btn-color-defualt;
     -fx-text-fill: title-btn-hotel-choose;
-    -fx-font-size: 12;
+    -fx-font-size: 16;
     -fx-border-radius: 5;
 }
 
@@ -203,6 +205,13 @@
     -fx-pref-height: 40;
 }
 
+.btn-app-default:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: btn-color;
+    -fx-border-color: btn-color;
+    -fx-border-width: 2;
+}
+
 .btn-app-cancel {
     -fx-background-color: btn-color-cancel;
     -fx-text-fill: title-btn-cancel;
@@ -211,6 +220,13 @@
     -fx-border-radius: 10px;
     -fx-pref-width: 100;
     -fx-pref-height: 40;
+}
+
+.btn-app-cancel:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: title-btn-cancel;
+    -fx-border-color: title-btn-cancal;
+    -fx-border-width: 2;
 }
 
 .btn-page {
@@ -233,7 +249,7 @@
 /* Header */
 .header {
     -fx-text-fill: header-color;
-    -fx-font-size: 36;
+    -fx-font-size: 30;
 }
 
 /* title */
