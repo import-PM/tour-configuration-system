@@ -23,7 +23,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
    <children>
       <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
          <children>
@@ -121,9 +121,9 @@
                   </Label>
                   <MenuButton fx:id="nameTitleMenuButton" layoutX="45.0" layoutY="30.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" styleClass="title-on-page" text="เลือก...">
                     <items>
-                        <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" onAction="#handleMisterMenuItem" text="นาย" />
-                      <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" onAction="#handleMistressMenuItem" text="นาง" />
-                      <MenuItem fx:id="missMenuitem" mnemonicParsing="false" onAction="#handleMissMenuItem" text="นางสาว" />
+                        <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" text="นาย" />
+                      <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" text="นาง" />
+                      <MenuItem fx:id="missMenuitem" mnemonicParsing="false" text="นางสาว" />
                     </items>
                      <font>
                         <Font size="12.0" />
@@ -185,16 +185,6 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="startDateToEndDateLabel" layoutX="700.0" layoutY="370.0" styleClass="title-color-on-page" text="วันที่เริ่มต้น-วันสิ้นสุด">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <MenuButton fx:id="nameTitleMenuButton" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" text="เลือก..." />
-            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="26.0" prefWidth="424.0" styleClass="text-field-color" />
-            <TextField fx:id="emailTextField" layoutX="675.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextField fx:id="phoneNumberTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
-            <TextArea fx:id="detailTextArea" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" styleClass="text-area-color" />
             <TextField fx:id="locationTextField" layoutX="230.0" layoutY="370.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-color" />
             <TextField fx:id="budgetTextField" layoutX="230.0" layoutY="470.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-color" />
             <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-color" />
@@ -229,11 +219,6 @@
                </font>
             </Label>
             <DatePicker fx:id="startDatePicker" layoutX="588.0" layoutY="371.0" />
-            <Label fx:id="hyphenLabel" layoutX="783.0" layoutY="370.0" text="-" textAlignment="CENTER">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
             <DatePicker fx:id="endDatePicker" layoutX="796.0" layoutY="371.0" />
             <Pane layoutY="638.0" prefHeight="40.0" prefWidth="972.0" styleClass="pane-section-layout">
                <children>

@@ -36,7 +36,7 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    protected void handleTransportButton(ActionEvent e) {
+    protected void handleTranspotButton(ActionEvent e) {
         try {
             App.goTo(Page.TRANSPORT);
         } catch (IOException e1) {
@@ -46,13 +46,18 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    protected void handleTourListButton(ActionEvent e) {
+    protected void handleTourlistButton(ActionEvent e) {
         try {
             App.goTo(Page.TOUR_LIST);
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void handleTourDetailButton(ActionEvent e) {
+
     }
 
     @FXML
