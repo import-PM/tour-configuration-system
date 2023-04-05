@@ -99,7 +99,7 @@
             </Label>
             <Pane layoutY="639.0" prefHeight="40.0" prefWidth="972.0" styleClass="pane-section-layout">
                <children>
-                  <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ยกเลิก" />
+                  <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ย้อนกลับ" />
                   <Button fx:id="saveButton" layoutX="880.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
                </children>
             </Pane>

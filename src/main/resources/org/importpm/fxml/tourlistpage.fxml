@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -26,156 +25,176 @@
             </Label>
             <Pane layoutY="90.0" styleClass="pane-section-layout">
                <children>
-                  <Label fx:id="tourIDLabel" styleClass="title-on-page" text="TOUR ID">
+                  <Label fx:id="tourIDLabel" layoutX="50.0" styleClass="title-on-page" text="TOUR ID">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="nameHeaderLabel" layoutX="120.0" styleClass="title-on-page" text="ชื่อผู้ติดต่อ">
+                  <Label fx:id="nameHeaderLabel" layoutX="140.0" styleClass="title-on-page" text="ชื่อผู้ติดต่อ">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="telHeaderLabel" layoutX="450.0" styleClass="title-on-page" text="เบอร์โทรศัพท์">
+                  <Label fx:id="telHeaderLabel" layoutX="540.0" styleClass="title-on-page" text="เบอร์โทรศัพท์">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="statusHeaderLabel" layoutX="640.0" styleClass="title-on-page" text="สถานะ">
+                  <Label fx:id="statusHeaderLabel" layoutX="765.0" styleClass="title-on-page" text="สถานะ">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="tourListItem0Pane" layoutY="120.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem0Pane" layoutY="120.0" prefHeight="30.0" prefWidth="10.0" styleClass="layout-tour-list">
                <children>
-                  <Pane fx:id="item0DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item0DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number0Label" styleClass="title-on-page" text="1" />
-                        <Label fx:id="name0Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber0Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status0Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="number0Label" layoutX="-20.0" styleClass="title-on-page" text="1" />
+                        <Label fx:id="name0Label1" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="name0Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber0Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status0Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton0" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton0" text="ยืนยัน" />
+                  <Button fx:id="acceptButton0" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton0" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton01" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton0" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem1Pane" layoutY="140.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem1Pane" layoutY="160.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item1DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item1DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number1Label" styleClass="title-on-page" text="2" />
-                        <Label fx:id="name1Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber1Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status1Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label11" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="number1Label" layoutX="-20.0" styleClass="title-on-page" text="2" />
+                        <Label fx:id="name1Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber1Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status1Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton1" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton1" text="ยืนยัน" />
+                  <Button fx:id="acceptButton1" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton1" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton11" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton1" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem2Pane" layoutY="160.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem2Pane" layoutY="200.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item2DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item2DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number2Label" styleClass="title-on-page" text="3" />
-                        <Label fx:id="name2Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber2Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status2Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="number2Label" layoutX="-20.0" styleClass="title-on-page" text="3" />
+                        <Label fx:id="name0Label12" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="name2Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber2Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status2Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton2" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton2" text="ยืนยัน" />
+                  <Button fx:id="acceptButton2" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton2" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton21" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton2" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem3Pane" layoutY="180.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem3Pane" layoutY="240.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item3DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item3DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number3Label" styleClass="title-on-page" text="4" />
-                        <Label fx:id="name3Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber3Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status3Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="number3Label" layoutX="-20.0" styleClass="title-on-page" text="4" />
+                        <Label fx:id="name3Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber3Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status3Label" layoutX="715.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label13" layoutX="10.0" styleClass="title-on-page" text="ID" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton3" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton3" text="ยืนยัน" />
+                  <Button fx:id="acceptButton3" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton3" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton31" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton3" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem4Pane" layoutY="200.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem4Pane" layoutY="280.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item4DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item4DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number4Label" styleClass="title-on-page" text="5" />
-                        <Label fx:id="name4Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber4Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status4Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label14" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="number4Label" layoutX="-20.0" styleClass="title-on-page" text="5" />
+                        <Label fx:id="name4Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber4Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status4Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton4" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton4" text="ยืนยัน" />
+                  <Button fx:id="acceptButton4" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton4" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton41" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton4" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem5Pane" layoutY="220.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem5Pane" layoutY="320.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item5DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item5DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number5Label" styleClass="title-on-page" text="6" />
-                        <Label fx:id="name5Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber5Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status5Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label15" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="number5Label" layoutX="-20.0" styleClass="title-on-page" text="6" />
+                        <Label fx:id="name5Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber5Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status5Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton5" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton5" text="ยืนยัน" />
+                  <Button fx:id="acceptButton5" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton5" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton51" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton5" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem6Pane" layoutY="240.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem6Pane" layoutY="360.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item6DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item6DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number6Label" styleClass="title-on-page" text="7" />
-                        <Label fx:id="name6Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber6Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status6Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="number6Label" layoutX="-20.0" styleClass="title-on-page" text="7" />
+                        <Label fx:id="name6Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber6Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status6Label" layoutX="715.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label16" layoutX="10.0" styleClass="title-on-page" text="ID" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton6" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton6" text="ยืนยัน" />
+                  <Button fx:id="acceptButton6" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton6" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton61" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton6" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem7Pane" layoutY="260.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem7Pane" layoutY="400.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item7DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item7DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number7Label" styleClass="title-on-page" text="8" />
-                        <Label fx:id="name7Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber7Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status7Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="number7Label" layoutX="-20.0" styleClass="title-on-page" text="8" />
+                        <Label fx:id="name7Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber7Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status7Label" layoutX="715.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label17" layoutX="10.0" styleClass="title-on-page" text="ID" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton7" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton7" text="ยืนยัน" />
+                  <Button fx:id="acceptButton7" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton7" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton71" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton7" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem8Pane" layoutY="280.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem8Pane" layoutY="440.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="itemDetail8Pane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="itemDetail8Pane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number8Label" styleClass="title-on-page" text="9" />
-                        <Label fx:id="name8Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber8Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status8Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label18" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="number8Label" layoutX="-20.0" styleClass="title-on-page" text="9" />
+                        <Label fx:id="name8Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber8Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status8Label" layoutX="715.0" layoutY="1.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton8" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton8" text="ยืนยัน" />
+                  <Button fx:id="acceptButton8" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton8" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton81" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton8" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
-            <Pane fx:id="tourListItem9Pane" layoutY="300.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
+            <Pane fx:id="tourListItem9Pane" layoutY="480.0" prefHeight="30.0" prefWidth="10.0" styleClass="pane-section-layout">
                <children>
-                  <Pane fx:id="item9DetailPane" layoutY="6.0" styleClass="pane-section-layout">
+                  <Pane fx:id="item9DetailPane" layoutX="50.0" layoutY="6.0" styleClass="card-tour-list">
                      <children>
-                        <Label fx:id="number9Label" styleClass="title-on-page" text="10" />
-                        <Label fx:id="name9Label" layoutX="74.0" styleClass="title-on-page" text="name" />
-                        <Label fx:id="telephoneNumber9Label" layoutX="182.0" styleClass="title-on-page" text="Tel" />
-                        <Label fx:id="status9Label" layoutX="317.0" layoutY="1.0" styleClass="title-on-page" text="status" />
+                        <Label fx:id="name0Label19" layoutX="10.0" styleClass="title-on-page" text="ID" />
+                        <Label fx:id="number9Label" layoutX="-20.0" styleClass="title-on-page" text="10" />
+                        <Label fx:id="name9Label" layoutX="90.0" styleClass="title-on-page" text="name" />
+                        <Label fx:id="telephoneNumber9Label" layoutX="490.0" styleClass="title-on-page" text="Tel" />
+                        <Label fx:id="status9Label" layoutX="715.0" styleClass="title-on-page" text="status" />
                      </children>
                   </Pane>
-                  <Button fx:id="acceptButton9" layoutX="800.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton9" text="ยืนยัน" />
+                  <Button fx:id="acceptButton9" layoutX="850.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton9" styleClass="btn-confirm" text="ยืนยัน" />
+                  <Button fx:id="acceptButton91" layoutX="900.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleAcceptButton9" styleClass="btn-cancel-tour" text="ยกเลิก" />
                </children>
             </Pane>
              <HBox fx:id="underBarHBox" alignment="CENTER" layoutY="600.0" prefHeight="40.0" prefWidth="1080.0" spacing="20.0" styleClass="pane-section-layout">
@@ -187,6 +206,11 @@
                    <Button fx:id="lastPageButton" mnemonicParsing="false" onAction="#handleLastPageButton" text="&gt;|" />
                 </children>
              </HBox>
+            <Pane layoutY="638.0" prefHeight="40.0" prefWidth="972.0" styleClass="pane-section-layout">
+               <children>
+                  <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ย้อนกลับ" />
+               </children>
+            </Pane>
          </children>
       </Pane>
       <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
@@ -249,7 +273,7 @@
                   <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
                </children>
             </HBox>
-            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" styleClass="btn-sidebar-logout" text="ออกจากระบบ">
                <font>
                   <Font size="14.0" />
                </font>
