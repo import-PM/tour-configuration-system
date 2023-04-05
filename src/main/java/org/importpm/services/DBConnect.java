@@ -422,7 +422,12 @@ public class DBConnect {
     }
 
     public static List<Tour> getTours() {
-        return createTourList("SELECT id,fk_province_id,fk_quotation_id,contact_name,contact_phone,contact_email,insurance_status,cost_price,tourist_total,budget,description,start_date,end_date FROM tour");
+        return createTourList("SELECT id,fk_province_id,fk_quotation_id,contact_name,contact_phone,contact_email,status,insurance_status,cost_price,tourist_total,budget,description,start_date,end_date FROM tour");
+    }
+
+    public static List<Tour> getToursWithOutCancel() {
+        return createTourList("SELECT id,fk_province_id,fk_quotation_id,contact_name,contact_phone,contact_email,status,insurance_status,cost_price,tourist_total,budget,description,start_date,end_date FROM tour\n" +
+        "WHERE status != 9");
     }
 
     //-------------------------------- Insert Data To Table --------------------------------

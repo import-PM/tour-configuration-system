@@ -3,6 +3,7 @@ package org.importpm.controllers;
 import java.io.IOException;
 
 import org.importpm.App;
+import org.importpm.controllers.enums.Page;
 import org.importpm.models.enums.TourStatus;
 import org.importpm.services.DBConnect;
 import org.importpm.models.Tour;
@@ -48,6 +49,8 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     private void initialize() {
+        nameTitleMenuButton = new MenuButton();
+
         setValue();
     }
 
@@ -65,53 +68,58 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     @FXML private void handleSaveButton(ActionEvent e) {
-        Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
-        
+        int isAcceptInsurance = 1;
+        if (denyRadioButton.isSelected()) isAcceptInsurance = 0;
+
+        Tour tour = new Tour(nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), Integer.parseInt(customerTextField.getText()), isAcceptInsurance, Double.parseDouble(budgetTextField.getText()), detailTextArea.getText(), startDatePicker.getValue(), endDatePicker.getValue());
+        App.setSelectedTour(tour);
+
         try {
-            DBConnect.insertTour(tour);
-        } catch(Exception ex) {
-            new Alert(AlertType.ERROR, ex.getMessage()).show();
+            App.goTo(Page.HOTEL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
         }
-        
+
     }
 
-    @FXML
-    private void handleChangeThemeDefault(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("default.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeDefault(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("default.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
-    @FXML
-    private void handleChangeThemeDark(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("dark.css");
-            App.goTo("index");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void handleChangeThemeBlueSky(ActionEvent actionEvent){
-        try {
-            App.setPath("bluesky.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeDark(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("dark.css");
+    //         App.goTo("index");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    // @FXML
+    // private void handleChangeThemeBlueSky(ActionEvent actionEvent){
+    //     try {
+    //         App.setPath("bluesky.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
-    @FXML
-    private void handleChangeThemeHotPink(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("hotpink.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeHotPink(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("hotpink.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
 }

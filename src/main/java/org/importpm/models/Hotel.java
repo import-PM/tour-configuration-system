@@ -55,10 +55,6 @@ public class Hotel {
         this.province = province;
     }
 
-    public Hotel findHotelById(int id){
-        for ()
-    }
-
     @Override
     public String toString() {
         return "Hotel{" +

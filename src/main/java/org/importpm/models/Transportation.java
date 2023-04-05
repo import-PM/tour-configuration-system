@@ -6,11 +6,19 @@ public class Transportation {
     private int id;
     private double price;
     private TransportationType type;
+    private int amount;
 
-    public Transportation(int id, double price, TransportationType type) {
+    public Transportation(int id, double price, TransportationType type, int amount) {
         this.id = id;
         this.price = price;
         this.type = type;
+        this.amount = amount;
+    }
+
+    public Transportation(double price, TransportationType type, int amount) {
+        this.price = price;
+        this.type = type;
+        this.amount = amount;
     }
 
     public int getId() {
@@ -23,5 +31,9 @@ public class Transportation {
 
     public TransportationType getType() {
         return type;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }

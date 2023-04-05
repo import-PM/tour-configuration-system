@@ -153,6 +153,10 @@ public class Tour {
         this.tourists = tourists;
     }
 
+    public void setStatus(TourStatus status) {
+        this.status = status;
+    }
+
     public void setTransportations(List<Transportation> transportations) {
         this.transportations = transportations;
     }

@@ -2,7 +2,8 @@ package org.importpm.models.enums;
 
 public enum TourStatus {
     PROGRESS("กำลังดำเนิน",0),
-    COMPLETE("เสร็จสิ้น",1),
+    PAID("จ่ายเงินแล้ว", 1),
+    COMPLETE("เสร็จสิ้น",2),
     CANCEL("ยกเลิก",9);
 
     private String name;

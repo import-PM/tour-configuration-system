@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -18,7 +24,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
    <children>
       <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
          <children>
@@ -73,12 +79,12 @@
                </children>
             </HBox>
             <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="3.0">
-               <children>
+               <!-- <children>
                   <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#handleChangeThemeDefault" prefHeight="10.0" prefWidth="10.0" />
                   <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#handleChangeThemeDark" prefHeight="10.0" prefWidth="10.0" />
                   <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#handleChangeThemeBlueSky" prefHeight="10.0" prefWidth="10.0" />
                   <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onAction="#handleChangeThemeHotPink" prefHeight="10.0" prefWidth="10.0" />
-               </children>
+               </children> -->
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>

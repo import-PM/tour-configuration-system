@@ -1,10 +1,11 @@
 package org.importpm.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.importpm.App;
-import org.importpm.databases.Database;
+import org.importpm.controllers.enums.Page;
 import org.importpm.models.Hotel;
 
 import javafx.application.Platform;
@@ -222,41 +223,93 @@ public class HotelPageController extends AbstractPageController {
     @FXML
     private void handleselectbutton1(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(0));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton2(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(1));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton3(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(2));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton4(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(3));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton5(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(4));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton6(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(5));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleselectbutton7(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(6));
+        try {
+            App.goTo(Page.TRANSPORT);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleClickSearchButton(MouseEvent e) {
         // TODO
+    }
+
+    @FXML
+    private void handleCancelButton(ActionEvent e) {
+        
+    }
+
+    @FXML
+    private void handleSaveButton(ActionEvent e) {
+        
     }
 
 }
