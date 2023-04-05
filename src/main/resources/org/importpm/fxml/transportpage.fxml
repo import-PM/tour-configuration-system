@@ -24,7 +24,7 @@
                         <Image url="@../../../images/Detail%20-%20Icon.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar-default" text="Button" />
+                  <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar-default" text="สร้างรายการ" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
@@ -34,7 +34,7 @@
                         <Image url="@../../../images/Hotel%20-%20Icon.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar-default" text="Button" />
+                  <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar-default" text="โรงแรมและที่พัก" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
@@ -44,7 +44,7 @@
                         <Image url="@../../../images/Transpots%20-%20Icon.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" styleClass="btn-sidebar-default" text="Button" />
+                  <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" styleClass="btn-sidebar-default" text="การเดินทาง" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
@@ -54,7 +54,7 @@
                         <Image url="@../../../images/CardChecklist.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" styleClass="btn-sidebar-default" text="Button" />
+                  <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" styleClass="btn-sidebar-default" text="รายการทัวร์" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
@@ -64,15 +64,15 @@
                         <Image url="@../../../images/FileEarmarkText.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="tourDetail_button" mnemonicParsing="false" onAction="#handleTourDetailButton" styleClass="btn-sidebar-default" text="Button" />
+                  <Button fx:id="tourDetail_button" mnemonicParsing="false" onAction="#handleTourDetailButton" styleClass="btn-sidebar-default" text="รายละเอียดทัวร์" />
                </children>
             </HBox>
-            <HBox fx:id="themeHBox1" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="3.0">
+            <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="3.0">
                <children>
-                  <Button fx:id="defaultTheme1" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="darkTheme1" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="hotpinkTheme1" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                  <Button fx:id="blueSkyTheme1" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
                </children>
             </HBox>
             <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">

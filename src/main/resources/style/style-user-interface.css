@@ -119,13 +119,17 @@
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 20;
+    -fx-font-size: 20;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
+    /*-fx-pref-width: 400;*/
     -fx-pref-width: 400;
     -fx-pref-height: 50;
     -fx-translate-x: 20;
+    -fx-translate-x: 20;
 }
 
+.btn-sidebar-default:hover {
 .btn-sidebar-default:hover {
     -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
@@ -176,6 +180,8 @@
 .btn-sidebar-logout {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
+
+    -fx-font-size: 24;
     -fx-font-size: 20;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
@@ -185,7 +191,9 @@
 
 .btn-sidebar-logout:hover {
     -fx-background-color: btn-sidebar-hover;
+    -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
+
 }
 
 .btn-hotel-choose {
@@ -249,6 +257,7 @@
 /* Header */
 .header {
     -fx-text-fill: header-color;
+    -fx-font-size: 30;
     -fx-font-size: 30;
 }
 
