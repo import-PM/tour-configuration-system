@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -72,7 +73,7 @@
                   <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
                </children>
             </HBox>
-            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" styleClass="btn-sidebar-logout" text="exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" styleClass="btn-sidebar-logout" text="ออกจากระบบ">
                <font>
                   <Font size="14.0" />
                </font>
@@ -84,14 +85,14 @@
          <image>
             <Image url="@../../../images/Logo%20-%20App.png" />
          </image></ImageView>
-      <Pane layoutX="315.0" layoutY="34.0" styleClass="background-section-option">
+      <Pane layoutX="317.0" layoutY="27.0" styleClass="background-section-option">
          <children>
             <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="การเดินทาง">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="transportTypeLabel" layoutX="456.0" layoutY="78.0" styleClass="title-color-on-page" text="ประเภทของยานพาหนะ">
+            <Label fx:id="transportTypeLabel" layoutX="372.0" layoutY="150.0" styleClass="header" text="ประเภทของยานพาหนะ">
                <font>
                   <Font size="24.0" />
                </font>
@@ -100,6 +101,51 @@
                <children>
                   <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ยกเลิก" />
                   <Button fx:id="saveButton" layoutX="880.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
+               </children>
+            </Pane>
+            <Pane layoutX="250.0" layoutY="238.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="20.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Car.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="2 - 4 คน" />
+                  <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
+                  <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดเล็ก" />
+                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="250.0" layoutY="300.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="20.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Van.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="5 - 10 คน" />
+                  <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
+                  <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดกลาง" />
+                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="250.0" layoutY="360.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="20.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Bus.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="10 คนขึ้นไป" />
+                  <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
+                  <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดใหญ่" />
+                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
                </children>
             </Pane>
          </children>

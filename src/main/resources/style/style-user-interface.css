@@ -10,7 +10,8 @@
     background-section-option   : #ffffff; /* White */
     background-text-field       : #ffffff; /* White */
     background-text-area        : #ffffff; /* White */
-    background-card-hotel       : rgba(0,0,0,0.2); /* Gray */
+    background-card-hotel       : rgba(0,0,0,0.1); /* Gray */
+    background-card-transports  : rgba(0,0,0,0.1); /* Gray */
 
     /* Button */
     btn-sidebar-hover           : #ffffff; /* White */
@@ -36,6 +37,7 @@
     text-color-on-text-area     : #000000; /* Black */
     text-area-border            : #D2D2D2; /* Gray */
     text-field-border           : #D2D2D2; /* Gray */
+    card-transports-border      : #D2D2D2; /* Gray */
 }
 
 @font-face {
@@ -106,6 +108,17 @@
     -fx-border-radius: 5px;
     -fx-pref-height: 50px;
     -fx-background-color: background-card-hotel;
+}
+
+.card-transports {
+    -fx-pref-width: 400;
+    -fx-pref-height: 50;
+    -fx-background-color: background-card-transports;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    /*-fx-border-color: card-transports-border;*/
+    /*-fx-border-width: 2;*/
+
 }
 
 /* <--------------------------------------------------------------------------> */
