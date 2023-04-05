@@ -3,42 +3,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.TourListPageController">
     <children>
-        <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="575.0" prefWidth="245.0" spacing="35.0" styleClass="background-section-sidebar">
-            <children>
-                <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar" text="Button" />
-                <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar" text="Button" />
-                <Button fx:id="transportButton" mnemonicParsing="false" onAction="#handleTransportButton" styleClass="btn-sidebar" text="Button" />
-                <Button fx:id="tourListButton" mnemonicParsing="false" onAction="#handleTourListButton" styleClass="btn-sidebar" text="Button" />
-                <Pane fx:id="sideBarSpacePane" prefHeight="245.0" prefWidth="245.0" />
-                <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="4.0">
-                    <children>
-                        <Pane fx:id="themeSpacePane" prefHeight="26.0" prefWidth="4.0" />
-                        <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                        <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                        <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                        <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
-                    </children>
-                </HBox>
-                <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </Button>
-            </children>
-        </VBox>
-        <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/Vector.png" />
+         </image></ImageView>
         <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="รายการทัวร์">
@@ -79,5 +59,73 @@
                </content>
             </ScrollPane>
          </children></AnchorPane>
+      <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" styleClass="image-view-logo-icon">
+                     <image>
+                        <Image url="@../../../images/Detail%20-%20Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="buildture_button" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar-default" text="สร้างรายการ" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Hotel%20-%20Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="hotel_button" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar-default" text="โรงแรมและที่พัก" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Transpots%20-%20Icon.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="transpot_button" mnemonicParsing="false" onAction="#handleTranspotButton" styleClass="btn-sidebar-default" text="การเดินทาง" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/CardChecklist.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="tourlist_button" mnemonicParsing="false" onAction="#handleTourlistButton" styleClass="btn-sidebar-default" text="รายการทัวร์" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/FileEarmarkText.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="tourDetail_button" mnemonicParsing="false" onAction="#handleTourDetailButton" styleClass="btn-sidebar-default" text="รายละเอียดทัวร์" />
+               </children>
+            </HBox>
+            <HBox fx:id="themeHBox" alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="246.0" spacing="3.0">
+               <children>
+                  <Button fx:id="defaultTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="darkTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="hotpinkTheme" alignment="TOP_LEFT" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+                  <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
+               </children>
+            </HBox>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </VBox>
     </children>
 </AnchorPane>
