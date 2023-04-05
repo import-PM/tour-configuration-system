@@ -34,14 +34,16 @@
     text-color-on-text-area     : #000000; /* Black */
     text-area-border            : #D2D2D2; /* Gray */
     text-field-border           : #D2D2D2; /* Gray */
-
-
 }
 
-.root{
+@font-face {
+    font-family: 'RSU';
+    src: url('RSU_Regular.ttf');
+}
+
+.text {
     -fx-font-family: "RSU";
 }
-
 
 /* <--------Layouts Function--------------------------------------------------> */
 
