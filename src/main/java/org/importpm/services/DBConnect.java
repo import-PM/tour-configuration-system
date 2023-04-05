@@ -449,6 +449,8 @@ public class DBConnect {
                     tour.getStartDate() + "','" +
                     tour.getEndDate() + "')"
             );
+            insertTourTransportation(tour);
+            insertTourHotel(tour);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
