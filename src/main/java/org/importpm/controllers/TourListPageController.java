@@ -205,7 +205,7 @@ public class TourListPageController extends AbstractPageController {
                 denyButtons.add(acceptButton81);
                 denyButtons.add(acceptButton91);
 
-                tours = new ArrayList<>();
+                tours = DBConnect.getTours();
 
                 currentPage = 1;
 
@@ -249,7 +249,7 @@ public class TourListPageController extends AbstractPageController {
         }
 
         for (int i = 0 ; i < selectedTours.size(); ++i) {
-            ids.get(i).setText(selectedTours.get(i).getContactName());
+            ids.get(i).setText(String.valueOf(selectedTours.get(i).getId()));
             names.get(i).setText(selectedTours.get(i).getContactName());
             telephones.get(i).setText(selectedTours.get(i).getContactPhone());
             statuses.get(i).setText(selectedTours.get(i).getStatus().getName());

@@ -7,10 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import org.importpm.controllers.enums.Page;
 import org.importpm.models.Hotel;
 import org.importpm.models.Tour;
+import org.importpm.services.DBConnect;
 
 /**
  * JavaFX App
@@ -64,7 +66,15 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        DBConnect.loadDriver();
         launch();
+        
+        try {
+            DBConnect.closeDriver();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
 }
