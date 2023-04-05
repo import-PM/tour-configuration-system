@@ -7,20 +7,23 @@ import org.importpm.App;
 import org.importpm.databases.Database;
 import org.importpm.models.Hotel;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class HotelPageController extends AbstractPageController {
-    @FXML private TextField typeComboBox;
-    @FXML private TextField nameComboBox;
-    @FXML private TextField ratingComboBox;
-    @FXML private TextField priceComboBox;
+    @FXML private ComboBox<String> typeComboBox;
+    @FXML private ComboBox<String> nameComboBox;
+    @FXML private ComboBox<String> ratingComboBox;
+    @FXML private ComboBox<String> priceComboBox;
     @FXML private Label searchButtonLabel;
 
     @FXML private Button firstPageButton;
@@ -89,54 +92,63 @@ public class HotelPageController extends AbstractPageController {
     private int currentPage;
 
     public HotelPageController() {
-        panes = new ArrayList<>();
-        panes.add(listPane1);
-        panes.add(listPane2);
-        panes.add(listPane3);
-        panes.add(listPane4);
-        panes.add(listPane5);
-        panes.add(listPane6);
-        panes.add(listPane7);
+        Platform.runLater(new Runnable() {
 
-        typeImageViews = new ArrayList<>();
-        typeImageViews.add(typeImageView1);
-        typeImageViews.add(typeImageView2);
-        typeImageViews.add(typeImageView3);
-        typeImageViews.add(typeImageView4);
-        typeImageViews.add(typeImageView5);
-        typeImageViews.add(typeImageView6);
-        typeImageViews.add(typeImageView7);
+            @Override
+            public void run() {
+                panes = new ArrayList<>();
+                panes.add(listPane1);
+                panes.add(listPane2);
+                panes.add(listPane3);
+                panes.add(listPane4);
+                panes.add(listPane5);
+                panes.add(listPane6);
+                panes.add(listPane7);
 
-        names = new ArrayList<>();
-        names.add(nameLabel1);
-        names.add(nameLabel2);
-        names.add(nameLabel3);
-        names.add(nameLabel4);
-        names.add(nameLabel5);
-        names.add(nameLabel6);
-        names.add(nameLabel7);
+                typeImageViews = new ArrayList<>();
+                typeImageViews.add(typeImageView1);
+                typeImageViews.add(typeImageView2);
+                typeImageViews.add(typeImageView3);
+                typeImageViews.add(typeImageView4);
+                typeImageViews.add(typeImageView5);
+                typeImageViews.add(typeImageView6);
+                typeImageViews.add(typeImageView7);
 
-        ratingImageViews = new ArrayList<>();
-        ratingImageViews.add(ratingImageView1);
-        ratingImageViews.add(ratingImageView2);
-        ratingImageViews.add(ratingImageView3);
-        ratingImageViews.add(ratingImageView4);
-        ratingImageViews.add(ratingImageView5);
-        ratingImageViews.add(ratingImageView6);
-        ratingImageViews.add(ratingImageView7);
+                names = new ArrayList<>();
+                names.add(nameLabel1);
+                names.add(nameLabel2);
+                names.add(nameLabel3);
+                names.add(nameLabel4);
+                names.add(nameLabel5);
+                names.add(nameLabel6);
+                names.add(nameLabel7);
 
-        prices = new ArrayList<>();
-        prices.add(priceLabel1);
-        prices.add(priceLabel2);
-        prices.add(priceLabel3);
-        prices.add(priceLabel4);
-        prices.add(priceLabel5);
-        prices.add(priceLabel6);
-        prices.add(priceLabel7);
+                ratingImageViews = new ArrayList<>();
+                ratingImageViews.add(ratingImageView1);
+                ratingImageViews.add(ratingImageView2);
+                ratingImageViews.add(ratingImageView3);
+                ratingImageViews.add(ratingImageView4);
+                ratingImageViews.add(ratingImageView5);
+                ratingImageViews.add(ratingImageView6);
+                ratingImageViews.add(ratingImageView7);
 
-        hotels = Database.selectAllHotels();
-        currentPage = 1;
-        initialize();
+                prices = new ArrayList<>();
+                prices.add(priceLabel1);
+                prices.add(priceLabel2);
+                prices.add(priceLabel3);
+                prices.add(priceLabel4);
+                prices.add(priceLabel5);
+                prices.add(priceLabel6);
+                prices.add(priceLabel7);
+
+                hotels = new ArrayList<>();
+                // hotels = Database.selectAllHotels();
+                currentPage = 1;
+            
+                initialize();
+            }
+            
+        });
     }
 
     private void initialize() {
@@ -192,7 +204,9 @@ public class HotelPageController extends AbstractPageController {
 
     @FXML
     private void handlePreviousPageButton(ActionEvent e) {
-        currentPage--; setPage();
+        if (currentPage > 1) {
+            currentPage--; setPage();
+        }
     }
 
     @FXML
@@ -238,6 +252,11 @@ public class HotelPageController extends AbstractPageController {
     @FXML
     private void handleselectbutton7(ActionEvent e) {
         App.setSelectedHotel(selectedHotels.get(6));
+    }
+
+    @FXML
+    private void handleClickSearchButton(MouseEvent e) {
+        // TODO
     }
 
 }

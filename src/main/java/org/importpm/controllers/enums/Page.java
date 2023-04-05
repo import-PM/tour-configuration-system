@@ -6,7 +6,7 @@ public enum Page {
     SECONDARY("fxml/secondary.fxml"),
     BUILD_TOUR("fxml/buildtourpage.fxml"),
     HOTEL("fxml/hotelpage.fxml"),
-    TRANSPORT("fxml/transport.fxml"),
+    TRANSPORT("fxml/transportpage.fxml"),
     TOUR_LIST("fxml/tourlistpage.fxml");
 
     private final String fxmlPath;

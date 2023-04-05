@@ -7,6 +7,7 @@ import org.importpm.models.enums.TourStatus;
 import org.importpm.databases.Database;
 import org.importpm.models.Tour;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -36,8 +37,14 @@ public class BuildTourPageController extends AbstractPageController {
     @FXML private DatePicker endDatePicker;
 
     public BuildTourPageController() {
-        nameTitleMenuButton = new MenuButton();
-        initialize();
+        Platform.runLater(new Runnable() {
+
+            @Override
+            public void run() {
+                initialize();
+            }
+            
+        });
     }
 
     private void initialize() {
