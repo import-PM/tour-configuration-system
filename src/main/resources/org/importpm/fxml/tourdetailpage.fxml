@@ -73,7 +73,7 @@
                   <Button fx:id="blueSkyTheme" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="10.0" />
                </children>
             </HBox>
-            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" text="exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButton" styleClass="btn-sidebar-logout" text="ออกจากระบบ">
                <font>
                   <Font size="14.0" />
                </font>
@@ -85,9 +85,9 @@
          <image>
             <Image url="@../../../images/Logo%20-%20App.png" />
          </image></ImageView>
-      <ScrollPane layoutX="245.0" layoutY="34.0" prefHeight="686.0" prefWidth="1100.0">
+      <ScrollPane layoutX="315.0" layoutY="34.0" prefHeight="686.0" prefWidth="1100.0">
          <content>
-            <Pane>
+            <Pane layoutX="315.0" layoutY="34.0">
                <children>
                   <AnchorPane fx:id="fieldpane" prefHeight="945.0" prefWidth="1084.0">
                      <children>
@@ -95,7 +95,7 @@
                         <Pane fx:id="transportPane" layoutX="72.0" layoutY="608.0" prefHeight="150.0" prefWidth="667.0" />
                         <Pane fx:id="placePane" layoutX="72.0" layoutY="503.0" prefHeight="104.0" prefWidth="882.0" />
                         <Pane layoutX="72.0" layoutY="70.0" prefHeight="120.0" prefWidth="882.0" />
-                        <Button fx:id="handleBackPageButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" text="Back" />
+                        <Button fx:id="handleBackPageButton" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" text="ปิด" />
                         <Label fx:id="headerlabel" layoutX="112.0" layoutY="15.0" styleClass="header" text="Tour ID">
                            <font>
                               <Font size="36.0" />

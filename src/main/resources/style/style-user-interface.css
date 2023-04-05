@@ -10,6 +10,9 @@
     background-section-option   : #ffffff; /* White */
     background-text-field       : #ffffff; /* White */
     background-text-area        : #ffffff; /* White */
+    background-card-hotel       : rgba(0,0,0,0.1); /* Gray */
+    background-card-transports  : rgba(0,0,0,0.1); /* Gray */
+    background-card-tour-list   : rgba(0,0,0,0.1); /* Gray */
 
     /* Button */
     btn-sidebar-hover           : #ffffff; /* White */
@@ -21,6 +24,8 @@
     btn-sidebar-insurance       : rgba(0,0,0,0.5); /* transparent */
     btn-color-default           : #1E4BCA; /* Blue */
     btn-color-cancel            : #D2D2D2; /* Gray */
+    btn-color-confirm           : #1E4BCA; /* Blue */
+    btn-color-cancel-tour       : #FF0000; /* Red */
 
     /* Text */
     header-color                : #000000; /* Black */
@@ -35,6 +40,7 @@
     text-color-on-text-area     : #000000; /* Black */
     text-area-border            : #D2D2D2; /* Gray */
     text-field-border           : #D2D2D2; /* Gray */
+    card-transports-border      : #D2D2D2; /* Gray */
 }
 
 @font-face {
@@ -81,8 +87,6 @@
 
 .background-section-scrollbar {
     -fx-background-color: background-section-option;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
     -fx-pref-width: 1000;
     -fx-pref-height: 700;
     -fx-translate-x: 20;
@@ -101,9 +105,34 @@
 }
 
 .card-hotel {
-    -fx-pref-width: 500px;
-    -fx-max-width: 500px;
+    -fx-pref-width: 780px;
+    -fx-max-width: 780px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
     -fx-pref-height: 50px;
+    -fx-background-color: background-card-hotel;
+}
+
+.card-transports {
+    -fx-pref-width: 400;
+    -fx-pref-height: 50;
+    -fx-background-color: background-card-transports;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    /*-fx-border-color: card-transports-border;*/
+    /*-fx-border-width: 2;*/
+
+}
+
+.layout-tour-list {
+    -fx-pref-width: 1000;
+}
+
+.card-tour-list {
+    -fx-pref-width: 780;
+    -fx-background-color: background-card-tour-list;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
 }
 
 /* <--------------------------------------------------------------------------> */
@@ -219,6 +248,24 @@
     -fx-border-width: 2;
 }
 
+.btn-app-search {
+    -fx-background-color: btn-color-default;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 16;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-pref-width: 70;
+    -fx-pref-height: 20;
+}
+
+.btn-app-search:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: btn-color;
+    -fx-border-color: btn-color;
+    -fx-border-width: 2;
+}
+
+
 .btn-app-cancel {
     -fx-background-color: btn-color-cancel;
     -fx-text-fill: title-btn-cancel;
@@ -232,7 +279,7 @@
 .btn-app-cancel:hover {
     -fx-background-color: btn-app-default-hover;
     -fx-text-fill: title-btn-cancel;
-    -fx-border-color: title-btn-cancal;
+    -fx-border-color: btn-color-cancel;
     -fx-border-width: 2;
 }
 
@@ -247,6 +294,34 @@
     -fx-text-fill: title-on-btn-radio;
     -fx-font-size: 16;
     -fx-border-radius: 20;
+}
+
+.btn-confirm {
+    -fx-background-color: btn-color-confirm;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 12;
+    -fx-border-radius: 5;
+}
+
+.btn-confirm:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: btn-color-confirm;
+    -fx-border-color: btn-color-confirm;
+    -fx-border-width: 2;
+}
+
+.btn-cancel-tour {
+    -fx-background-color: btn-color-cancel-tour;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 12;
+    -fx-border-radius: 5;
+}
+
+.btn-cancel-tour:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: btn-color-cancel-tour;
+    -fx-border-color: btn-color-cancel-tour;
+    -fx-border-width: 2;
 }
 
 /* <--------------------------------------------------------------------------> */
