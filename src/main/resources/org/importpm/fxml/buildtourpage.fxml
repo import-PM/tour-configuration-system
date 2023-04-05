@@ -22,9 +22,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
+<AnchorPane fx:id="backgroundAnchorPane" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.BuildTourPageController">
    <children>
-      <VBox fx:id="sidebarVBox" alignment="CENTER" layoutY="185.0" prefHeight="575.0" prefWidth="245.0" spacing="35.0" styleClass="background-section-sidebar">
+      <VBox fx:id="sidebarVBox" alignment="CENTER" layoutX="5.0" layoutY="185.0" prefHeight="575.0" prefWidth="295.0" spacing="35.0" styleClass="v-box-layout">
          <children>
             <Button fx:id="buildTourButton" mnemonicParsing="false" onAction="#handleBuildtourButton" styleClass="btn-sidebar" text="สร้างรายการ" />
             <Button fx:id="hotelButton" mnemonicParsing="false" onAction="#handleHotelButton" styleClass="btn-sidebar" text="โรงแรมและที่พัก" />
@@ -47,89 +47,87 @@
             </Button>
          </children>
       </VBox>
-      <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" styleClass="background-section-option">
+      <ImageView fx:id="icon" fitHeight="80.0" fitWidth="300.0" layoutX="80.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" styleClass="background-section-logo">
+         <image>
+            <Image url="@../../../images/Logo%20-%20App.png" />
+         </image></ImageView>
+      <Pane layoutX="315.0" layoutY="34.0" styleClass="background-section-option">
          <children>
-            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="สร้างรายการ">
+            <Label fx:id="headerLabel" layoutX="44.0" layoutY="22.0" styleClass="header" text="สร้างรายการ">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label fx:id="nameTitleLabel" layoutX="80.0" layoutY="100.0" styleClass="title-on-page" text="คำนำหน้าชื่อ">
+            <Pane layoutY="100.0" styleClass="pane-section-layout">
+               <children>
+                  <TextField fx:id="nameTextField" layoutX="170.0" layoutY="30.0" prefHeight="26.0" prefWidth="424.0" styleClass="text-field-set" />
+                  <Label fx:id="phoneNumLabel" layoutX="795.0" styleClass="title-on-page" text="เบอร์โทรศัพท์">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <MenuButton fx:id="nameTitleMenuButton" layoutX="45.0" layoutY="30.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" styleClass="title-on-page" text="เลือก...">
+                    <items>
+                        <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" onAction="#handleMisterMenuItem" text="นาย" />
+                      <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" onAction="#handleMistressMenuItem" text="นาง" />
+                      <MenuItem fx:id="missMenuitem" mnemonicParsing="false" onAction="#handleMissMenuItem" text="นางสาว" />
+                    </items>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </MenuButton>
+                  <Label fx:id="nameTitleLabel" layoutX="46.0" styleClass="title-on-page" text="คำนำหน้าชื่อ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="nameLabel" layoutX="170.0" styleClass="title-on-page" text="ชื่อ-นามสกุล">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailTextField" layoutX="620.0" layoutY="30.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
+                  <TextField fx:id="phoneNumberTextField" layoutX="795.0" layoutY="30.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
+                  <Label fx:id="emailLabel" layoutX="620.0" styleClass="title-on-page" text="Email">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutY="159.0" prefHeight="140.0" prefWidth="1000.0">
+               <children>
+                  <Label fx:id="detailLabel" layoutX="48.0" layoutY="16.0" styleClass="title-on-page" text="รายละเอียด">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="detailTextArea" layoutX="48.0" layoutY="40.0" prefHeight="100.0" prefWidth="752.0" styleClass="text-area-set" />
+               </children>
+            </Pane>
+            <Label fx:id="locationLabel" layoutX="48.0" layoutY="324.0" prefHeight="25.0" prefWidth="140.0" styleClass="title-on-page" text="จังหวัด/สถานที่">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="nameLabel" layoutX="225.0" layoutY="100.0" styleClass="title-on-page" text="ชื่อ-นามสกุล">
+            <TextField fx:id="locationTextField" layoutX="172.0" layoutY="324.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
+            <Label fx:id="customerCountLabel" layoutX="49.0" layoutY="369.0" prefHeight="25.0" styleClass="title-on-page" text="จำนวนลูกทัวร์">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="emailLabel" layoutX="675.0" layoutY="100.0" styleClass="title-on-page" text="Email">
+            <TextField fx:id="customerTextField" layoutX="171.0" layoutY="371.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
+            <Label fx:id="customerCountUnitLabel" layoutX="344.0" layoutY="374.0" styleClass="title-on-page" text="คน">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="phoneNumLabel" layoutX="850.0" layoutY="100.0" styleClass="title-on-page" text="เบอร์โทรศัพท์">
+            <Label fx:id="insuranceLabel" layoutX="48.0" layoutY="474.0" styleClass="title-on-page" text="ประกันอุบัติเหตุ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="detailLabel" layoutX="80.0" layoutY="200.0" styleClass="title-on-page" text="รายละเอียด">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="locationLabel" layoutX="80.0" layoutY="365.0" prefHeight="25.0" prefWidth="140.0" styleClass="title-on-page" text="จังหวัด/สถานที่">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="customerCountLabel" layoutX="80.0" layoutY="415.0" prefHeight="25.0" styleClass="title-on-page" text="จำนวนลูกทัวร์">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="customerCountUnitLabel" layoutX="385.0" layoutY="415.0" styleClass="title-on-page" text="คน">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="budgetLabel" layoutX="80.0" layoutY="465.0" styleClass="title-on-page" text="งบประมาณ">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="budgetUnitLabel" layoutX="385.0" layoutY="465.0" styleClass="title-on-page" text="บาท">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="insuranceLabel" layoutX="80.0" layoutY="555.0" styleClass="title-on-page" text="ประกันอุบัติเหตุ">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="startDateToEndDateLabel" layoutX="700.0" layoutY="370.0" styleClass="title-on-page" text="วันที่เริ่มต้น-วันสิ้นสุด">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <MenuButton fx:id="nameTitleMenuButton" layoutX="80.0" layoutY="140.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="101.0" styleClass="title-on-page" text="เลือก...">
-              <items>
-                  <MenuItem fx:id="misterMenuitem" mnemonicParsing="false" onAction="#handleMisterMenuItem" text="นาย" />
-                <MenuItem fx:id="mistressMenuitem" mnemonicParsing="false" onAction="#handleMistressMenuItem" text="นาง" />
-                <MenuItem fx:id="missMenuitem" mnemonicParsing="false" onAction="#handleMissMenuItem" text="นางสาว" />
-              </items>
-            </MenuButton>
-            <TextField fx:id="nameTextField" layoutX="225.0" layoutY="140.0" prefHeight="26.0" prefWidth="424.0" styleClass="text-field-set" />
-            <TextField fx:id="emailTextField" layoutX="675.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
-            <TextField fx:id="phoneNumberTextField" layoutX="850.0" layoutY="140.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
-            <TextArea fx:id="detailTextArea" layoutX="80.0" layoutY="240.0" prefHeight="100.0" prefWidth="920.0" styleClass="text-area-set" />
-            <TextField fx:id="locationTextField" layoutX="230.0" layoutY="370.0" prefHeight="25.0" prefWidth="150.0" styleClass="text-field-set" />
-            <TextField fx:id="budgetTextField" layoutX="230.0" layoutY="470.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
-            <TextField fx:id="customerTextField" layoutX="230.0" layoutY="420.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
-            <Group layoutX="235.0" layoutY="555.0" styleClass="btn-radio">
+            <Group layoutX="171.0" layoutY="473.0" styleClass="btn-radio">
                <children>
                   <RadioButton fx:id="acceptRadioButton" mnemonicParsing="false" styleClass="btn-radio" text="รับ">
                      <font>
@@ -143,16 +141,36 @@
                   </RadioButton>
                </children>
             </Group>
-            <Button fx:id="saveButton" layoutX="887.0" layoutY="633.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
-            <Button fx:id="cancelButton" layoutX="38.0" layoutY="635.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ยกเลิก" />
-            <DatePicker fx:id="startDatePicker" layoutX="604.0" layoutY="420.0" />
-            <DatePicker fx:id="endDatePicker" layoutX="825.0" layoutY="420.0" />
-            <Label fx:id="hyphenLabel" layoutX="797.0" layoutY="415.0" text="-" textAlignment="CENTER">
+            <Label fx:id="budgetLabel" layoutX="51.0" layoutY="417.0" styleClass="title-on-page" text="งบประมาณ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
+            <TextField fx:id="budgetTextField" layoutX="171.0" layoutY="414.0" prefHeight="20.0" prefWidth="150.0" styleClass="text-field-set" />
+            <Label fx:id="budgetUnitLabel" layoutX="340.0" layoutY="414.0" styleClass="title-on-page" text="บาท">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="startDateToEndDateLabel" layoutX="732.0" layoutY="326.0" styleClass="title-on-page" text="วันที่เริ่มต้น-วันสิ้นสุด">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="startDatePicker" layoutX="588.0" layoutY="371.0" />
+            <Label fx:id="hyphenLabel" layoutX="783.0" layoutY="370.0" text="-" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="endDatePicker" layoutX="796.0" layoutY="371.0" />
+            <Pane layoutY="638.0" prefHeight="40.0" prefWidth="972.0" styleClass="pane-section-layout">
+               <children>
+                  <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ยกเลิก" />
+                  <Button fx:id="saveButton" layoutX="880.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
+               </children>
+            </Pane>
          </children>
-      </AnchorPane>
+      </Pane>
    </children>
 </AnchorPane>

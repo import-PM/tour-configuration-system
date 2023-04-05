@@ -12,7 +12,7 @@
     background-text-area        : #ffffff; /* White */
 
     /* Button */
-    btn-sidebar-all             : #ffffff; /* White */
+    btn-sidebar-hover           : #ffffff; /* White */
     btn-sidebar-build           : rgba(0,0,0,0); /* transparent */
     btn-sidebar-hotel           : rgba(0,0,0,0.5); /* transparent */
     btn-sidebar-transport       : rgba(0,0,0,0.5); /* transparent */
@@ -40,6 +40,13 @@
 
 /* <--------Layouts Function--------------------------------------------------> */
 
+.background-section-logo {
+    -fx-pref-width: 300;
+    -fx-pref-height: 50;
+    -fx-fit-to-width: 300;
+    -fx-fit-to-height: 50;
+}
+
 .background-section-main-normal {
     -fx-background-color: background-section-main;
 }
@@ -52,16 +59,37 @@
 
 .background-section-sidebar {
     -fx-background-color: backround-section-sidebar;
-    -fx-pref-width: 300;
+    /*-fx-pref-width: 300;*/
 }
 
 .background-section-option {
     -fx-background-color: background-section-option;
     -fx-background-radius: 30px;
     -fx-border-radius: 30px;
-    -fx-pref-width: 1100;
+    -fx-pref-width: 1000;
     -fx-pref-height: 700;
-    -fx-translate-x: 70;
+    -fx-translate-x: 20;
+}
+
+.background-section-scrollbar {
+    -fx-background-color: background-section-option;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-pref-width: 1000;
+    -fx-pref-height: 700;
+    -fx-translate-x: 20;
+}
+
+.pane-section-layout {
+    -fx-pref-width: 1000px;
+}
+
+.v-box-layout {
+    -fx-pref-width: 300;
+}
+
+.v-box-btn-sidebar {
+    -fx-pref-width: 350px;
 }
 
 .card-hotel {
@@ -74,29 +102,34 @@
 
 /* <--------Buttons Function--------------------------------------------------> */
 
-.btn-sidebar {
-    -fx-text-alignment: LEFT;
+.image-view-logo-icon {
+    -fx-pref-width: 50;
+    -fx-pref-height: 50;
+}
+
+.btn-sidebar-default {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
     -fx-font-size: 24;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
-    -fx-pref-width: 200;
+    -fx-pref-width: 350;
     -fx-pref-height: 50;
-    -fx-translate-x: 60;
 }
 
 .btn-sidebar:hover {
-    -fx-background-color: btn-sidebar-all;
+    -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
 }
 
 .btn-sidebar-build {
     -fx-background-color: btn-sidebar-build;
     -fx-text-fill: title-color-btn-sidebar;
-    -fx-font-size: 20;
+    -fx-font-size: 24;
     -fx-background-radius: 50px;
     -fx-border-radius: 50px;
+    -fx-pref-width: 350;
+    -fx-pref-height: 50;
 }
 
 .btn-sidebar-hotel {
