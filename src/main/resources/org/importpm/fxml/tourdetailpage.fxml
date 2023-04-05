@@ -85,9 +85,9 @@
          <image>
             <Image url="@../../../images/Logo%20-%20App.png" />
          </image></ImageView>
-      <ScrollPane layoutX="245.0" layoutY="34.0" prefHeight="686.0" prefWidth="1100.0">
+      <ScrollPane layoutX="315.0" layoutY="34.0" prefHeight="686.0" prefWidth="1100.0">
          <content>
-            <Pane>
+            <Pane layoutX="315.0" layoutY="34.0">
                <children>
                   <AnchorPane fx:id="fieldpane" prefHeight="945.0" prefWidth="1084.0">
                      <children>

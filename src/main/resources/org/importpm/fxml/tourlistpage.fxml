@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -19,7 +20,7 @@
          <image>
             <Image url="@../../../images/Vector.png" />
          </image></ImageView>
-        <AnchorPane fx:id="fieldPane" layoutX="245.0" layoutY="34.0" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutX="315.0" layoutY="34.0" styleClass="background-section-option">
          <children>
             <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="รายการทัวร์">
                <font>
@@ -46,7 +47,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <ScrollPane fx:id="tourListScrollPane" layoutX="50.0" layoutY="140.0" prefHeight="500.0" prefWidth="1000.0">
+            <ScrollPane fx:id="tourListScrollPane" layoutX="50.0" layoutY="140.0" prefHeight="500.0" prefWidth="918.0">
                <content>
                   <GridPane fx:id="tourListGridPane" prefHeight="50.0" prefWidth="998.0">
                     <columnConstraints>
@@ -58,7 +59,8 @@
                   </GridPane>
                </content>
             </ScrollPane>
-         </children></AnchorPane>
+         </children>
+      </Pane>
       <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
          <children>
             <HBox prefHeight="100.0" prefWidth="100.0">
