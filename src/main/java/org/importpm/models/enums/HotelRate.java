@@ -6,7 +6,8 @@ public enum HotelRate {
     Four(4, ""),
     Three(3, ""),
     Two(2, ""),
-    One(1, "");
+    One(1, ""),
+    Zero(0, "");
 
     private int rating;
     private String imagePath;

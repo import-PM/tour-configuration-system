@@ -19,20 +19,9 @@ public class Tour {
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
-//                                rs.getString("id"),
-//                                        rs.getString("contact_name"),
-//                                        rs.getString("contact_phone"),
-//                                        rs.getString("contact_email"),
-//                                        rs.getInt("status"),
-//                                        rs.getFloat("cost_price"),
-//                                        rs.getInt("tourist_total"),
-//                                        rs.getFloat("budget"),
-//                                        rs.getString("description"),
-//                                        rs.getDate("start_date"),
-//                                        rs.getDate("end_date")
     private Province province;
     private List<Tourist> tourists;
-    private Hotel places;
+    private Hotel hotel;
     private List<Transportation> transportations;
     private Quotation quotation;
 
@@ -53,6 +42,7 @@ public class Tour {
 
         this.tourists = new ArrayList<Tourist>();
         this.transportations = new ArrayList<Transportation>();
+        this.province = new Province();
     }
 
     public Tour(String contactName, String contactPhone, String contactEmail, int touristTotal, int insuranceStatus, double budget, String description, LocalDate startDate, LocalDate endDate) {
@@ -136,11 +126,11 @@ public class Tour {
     }
 
     public Hotel getHotel() {
-        return places;
+        return hotel;
     }
 
     public void setHotel(Hotel places) {
-        this.places = places;
+        this.hotel = places;
     }
 
     public boolean addTransportation(Transportation transportation) {
@@ -157,5 +147,13 @@ public class Tour {
 
     public void setProvince(Province province) {
         this.province = province;
+    }
+
+    public void setTourists(List<Tourist> tourists) {
+        this.tourists = tourists;
+    }
+
+    public void setTransportations(List<Transportation> transportations) {
+        this.transportations = transportations;
     }
 }
