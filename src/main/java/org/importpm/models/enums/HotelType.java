@@ -3,7 +3,7 @@ package org.importpm.models.enums;
 public enum HotelType {
     // TODO: Images needed
     HOTEL("", 0),
-    ATTRACTION("", 1);
+    HOUSE("", 1);
 
     private String imagePath;
     private int type;

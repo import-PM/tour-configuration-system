@@ -9,6 +9,7 @@ public class Hotel {
     private double price;
     private HotelType type;
     private HotelRate rate;
+    private Province province;
 
     private double fixedPrice;
 
@@ -18,6 +19,8 @@ public class Hotel {
         this.price = price;
         this.type = type;
         this.rate = rate;
+
+        this.province = new Province();
     }
 
     public int getId() {
@@ -47,5 +50,25 @@ public class Hotel {
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    public void setProvince(Province province) {
+        this.province = province;
+    }
+
+    public Hotel findHotelById(int id){
+        for ()
+    }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", type=" + type +
+                ", rate=" + rate +
+                ", province=" + province +
+                ", fixedPrice=" + fixedPrice +
+                '}';
+    }
 }

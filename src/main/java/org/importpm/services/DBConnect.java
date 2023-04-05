@@ -10,6 +10,7 @@ import org.importpm.models.enums.*;
 
 public class DBConnect {
     private static Connection conn;
+    private static List<Province> provinces;
 
     //-------------------------------- Open And Close DBConnect --------------------------------
     public static void loadDriver() {
@@ -17,6 +18,7 @@ public class DBConnect {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost/tour-configuration-system?" + "user=root");
             System.out.println("Connection Is Successful");
+            provinces = getProvinces();
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -130,6 +132,22 @@ public class DBConnect {
         return tourist;
     }
 
+    public static List<Tourist> getTourist() {
+        return createTouristList("SELECT id,name,citizen_id,allergies,medical_note FROM tourist");
+    }
+
+    public static Tourist getTouristById(int id) {
+        return createTourist("SELECT id,name,citizen_id,allergies,medical_note FROM tourist\n" +
+                "WHERE id=" + id);
+    }
+
+    public static List<Tourist> getTouristsByTourId(int id) {
+        return createTouristList("SELECT tt.fk_tour_id,tt.fk_tourist_id,t.id,t.name,t.citizen_id,t.allergies,t.medical_note FROM tour_tourist as tt\n" +
+                "INNER JOIN tourist as t\n" +
+                "ON t.id = tt.fk_tourist_id\n" +
+                "WHERE tt.fk_tour_id = " + id);
+    }
+
     //-------------------------------- Get Data From Hotel Table  --------------------------------
     private static List<Hotel> createHotelList(String query) {
         List<Hotel> hotelArrayList = new ArrayList<>();
@@ -137,14 +155,15 @@ public class DBConnect {
             ResultSet rs = null;
             rs = query(query);
             while (rs.next()) {
-                hotelArrayList.add(new Hotel(
-                                rs.getInt("id"),
-                                rs.getString("name"),
-                                rs.getFloat("price"),
-                                HotelType.getType(rs.getInt("type")),
-                                HotelRate.getRating(rs.getInt("rate"))
-                        )
+                Hotel hotel = new Hotel(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getFloat("price"),
+                        HotelType.getType(rs.getInt("type")),
+                        HotelRate.getRating(rs.getInt("rate"))
                 );
+                hotel.setProvince(getProvinceById(rs.getInt("fk_province_id")));
+                hotelArrayList.add(hotel);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -165,12 +184,30 @@ public class DBConnect {
                         HotelType.getType(rs.getInt("type")),
                         HotelRate.getRating(rs.getInt("rate"))
                 );
+                hotel.setProvince(getProvinceById(rs.getInt("fk_province_id")));
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return hotel;
     }
+
+    public static List<Hotel> getHotels() {
+        return createHotelList("SELECT id,fk_province_id,name,price,type,rate FROM hotel");
+    }
+
+    public static Hotel getHotelById(int id) {
+        return createHotel("SELECT id,fk_province_id,name,price,type,rate FROM hotel\n" +
+                "WHERE id=" + id);
+    }
+
+    public static Hotel getHotelByTourId(int id) {
+        return createHotel("SELECT th.fk_tour_id,th.fk_hotel_id,h.id,h.fk_province_id,h.name,h.price,h.type,h.rate FROM tour_hotel as th\n" +
+                "INNER JOIN hotel as h \n" +
+                "ON th.fk_hotel_id = h.id\n" +
+                "WHERE th.fk_tour_id = " + id);
+    }
+
 
     //-------------------------------- Get Data From Province Table  --------------------------------
     private static List<Province> createProvinceList(String query) {
@@ -206,6 +243,15 @@ public class DBConnect {
             e.printStackTrace();
         }
         return province;
+    }
+
+    public static List<Province> getProvinces() {
+        return createProvinceList("SELECT id,name FROM province");
+    }
+
+    public static Province getProvinceById(int id) {
+        return createProvince("SELECT id,name FROM province\n" +
+                "WHERE id =" + id);
     }
 
     //-------------------------------- Get Data From Quotation Table  --------------------------------
@@ -246,6 +292,15 @@ public class DBConnect {
         return quotation;
     }
 
+    public static List<Quotation> getQuotations() {
+        return createQuotationList("SELECT id,real_price,status FROM quotation");
+    }
+
+    public static Quotation getQuotationById(int id) {
+        return createQuotation("SELECT id,real_price,status FROM quotation\n" +
+                "WHERE id=" + id);
+    }
+
     //-------------------------------- Get Data From Transportation Table  --------------------------------
     private static List<Transportation> createTransportationList(String query) {
         List<Transportation> transportationArrayList = new ArrayList<>();
@@ -284,6 +339,22 @@ public class DBConnect {
         return transportation;
     }
 
+    public static List<Transportation> getTransportations() {
+        return createTransportationList("SELECT id,price,type FROM transportation");
+    }
+
+    public static Transportation getTransportationById(int id) {
+        return createTransportation("SELECT id,price,type FROM transportation\n" +
+                "WHERE id=" + id);
+    }
+
+    public static List<Transportation> getTransportationByTourId(int id) {
+        return createTransportationList("SELECT tt.fk_tour_id,tt.fk_transportation_id,t.id,t.price,t.type FROM tour_transportation as tt\n" +
+                "INNER JOIN transportation as t\n" +
+                "ON t.id = tt.fk_transportation_id\n" +
+                "WHERE tt.fk_tour_id =" + id);
+    }
+
     //-------------------------------- Get Data From Tour Table  --------------------------------
     private static List<Tour> createTourList(String query) {
         List<Tour> tourArrayList = new ArrayList<>();
@@ -291,21 +362,26 @@ public class DBConnect {
             ResultSet rs = null;
             rs = query(query);
             while (rs.next()) {
-                tourArrayList.add(new Tour(
-                                rs.getInt("id"),
-                                rs.getString("contact_name"),
-                                rs.getString("contact_phone"),
-                                rs.getString("contact_email"),
-                                TourStatus.getTourStatus(rs.getInt("status")),
-                                rs.getFloat("cost_price"),
-                                rs.getInt("tourist_total"),
-                                rs.getInt("insurance_status"),
-                                rs.getFloat("budget"),
-                                rs.getString("description"),
-                                rs.getDate("start_date").toLocalDate(),
-                                rs.getDate("end_date").toLocalDate()
-                        )
+                Tour tour = new Tour(
+                        rs.getInt("id"),
+                        rs.getString("contact_name"),
+                        rs.getString("contact_phone"),
+                        rs.getString("contact_email"),
+                        TourStatus.getTourStatus(rs.getInt("status")),
+                        rs.getFloat("cost_price"),
+                        rs.getInt("tourist_total"),
+                        rs.getInt("insurance_status"),
+                        rs.getFloat("budget"),
+                        rs.getString("description"),
+                        rs.getDate("start_date").toLocalDate(),
+                        rs.getDate("end_date").toLocalDate()
                 );
+                tour.setHotel(getHotelByTourId(rs.getInt("id")));
+                tour.setTourists(getTouristsByTourId(rs.getInt("id")));
+                tour.setTransportations(getTransportationByTourId(rs.getInt("id")));
+                tour.setQuotation(getQuotationById(rs.getInt("fk_quotation_id")));
+                tour.setProvince(getProvinceById(rs.getInt("fk_province_id")));
+                tourArrayList.add(tour);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -333,6 +409,11 @@ public class DBConnect {
                         rs.getDate("start_date").toLocalDate(),
                         rs.getDate("end_date").toLocalDate()
                 );
+                tour.setHotel(getHotelByTourId(rs.getInt("id")));
+                tour.setTourists(getTouristsByTourId(rs.getInt("id")));
+                tour.setTransportations(getTransportationByTourId(rs.getInt("id")));
+                tour.setQuotation(getQuotationById(rs.getInt("fk_quotation_id")));
+                tour.setProvince(getProvinceById(rs.getInt("fk_province_id")));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -340,6 +421,9 @@ public class DBConnect {
         return tour;
     }
 
+    public static List<Tour> getTours() {
+        return createTourList("SELECT id,fk_province_id,fk_quotation_id,contact_name,contact_phone,contact_email,insurance_status,cost_price,tourist_total,budget,description,start_date,end_date FROM tour");
+    }
 
     //-------------------------------- Insert Data To Table --------------------------------
 
@@ -391,6 +475,15 @@ public class DBConnect {
                     "WHERE id=" + quotation.getId());
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    //-------------------------------- Test Data --------------------------------
+    public static void test() throws SQLException {
+        List<Hotel> hotels = getHotels();
+        System.out.println("Hello");
+        for (Hotel h : hotels) {
+            System.out.println(h);
         }
     }
 }
