@@ -38,6 +38,11 @@
 
 }
 
+.root{
+    -fx-font-family: "RSU";
+}
+
+
 /* <--------Layouts Function--------------------------------------------------> */
 
 .background-section-logo {
