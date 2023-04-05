@@ -1,0 +1,3 @@
+INSERT INTO quotation VALUE
+(1,50000,0),
+(2,30000,0);

@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.importpm.App;
 import org.importpm.models.enums.TourStatus;
-import org.importpm.databases.Database;
+import org.importpm.services.DBConnect;
 import org.importpm.models.Tour;
 
 import javafx.event.ActionEvent;
@@ -13,7 +13,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -37,6 +36,7 @@ public class BuildTourPageController extends AbstractPageController {
     @FXML private DatePicker endDatePicker;
 
     public BuildTourPageController() {
+        nameTitleMenuButton = new MenuButton();
         initialize();
     }
 
@@ -45,9 +45,7 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     private void setValue() {
-        nameTitleMenuButton.getItems().add(new MenuItem("นาย"));
-        nameTitleMenuButton.getItems().add(new MenuItem("นาง"));
-        nameTitleMenuButton.getItems().add(new MenuItem("นางสาว"));
+        // nameTitleMenuButton.getItems().addAll("นาย", "นาง", "นางสาว");
     }
 
     @FXML private void handleCancelButton(ActionEvent e) {
@@ -63,11 +61,50 @@ public class BuildTourPageController extends AbstractPageController {
         Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
         
         try {
-            Database.insertTour(tour);
+            DBConnect.insertTour(tour);
         } catch(Exception ex) {
             new Alert(AlertType.ERROR, ex.getMessage()).show();
         }
         
+    }
+
+    @FXML
+    private void handleChangeThemeDefault(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("default.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleChangeThemeDark(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("dark.css");
+            App.goTo("index");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void handleChangeThemeBlueSky(ActionEvent actionEvent){
+        try {
+            App.setPath("bluesky.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleChangeThemeHotPink(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("hotpink.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

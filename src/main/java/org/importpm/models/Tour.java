@@ -8,33 +8,50 @@ import org.importpm.models.enums.TourStatus;
 
 public class Tour {
     private int id;
-    private String description;
-    private String province;
+    private String contactName;
+    private String contactPhone;
+    private String contactEmail;
     private TourStatus status;
-    private int touristAmount;
+    private double costPrice;
+    private int touristTotal;
+    private int insuranceStatus;
     private double budget;
-    
+    private String description;
     private LocalDate startDate;
     private LocalDate endDate;
-
+//                                rs.getString("id"),
+//                                        rs.getString("contact_name"),
+//                                        rs.getString("contact_phone"),
+//                                        rs.getString("contact_email"),
+//                                        rs.getInt("status"),
+//                                        rs.getFloat("cost_price"),
+//                                        rs.getInt("tourist_total"),
+//                                        rs.getFloat("budget"),
+//                                        rs.getString("description"),
+//                                        rs.getDate("start_date"),
+//                                        rs.getDate("end_date")
+    private Province province;
     private List<Tourist> tourists;
-    private List<Place> places;
-    private List<Quotation> quotations;
+    private Hotel places;
     private List<Transportation> transportations;
-    private TravelInsurance travelInsurance;
+    private Quotation quotation;
 
-    public Tour(String description, String province, TourStatus status, int touristAmount, double budget, LocalDate startDate, LocalDate endDate) {
-        this.description = description;
-        this.province = province;
+    public Tour(int id, String contactName, String contactPhone, String contactEmail, TourStatus status,
+                double costPrice,  int touristTotal, int insuranceStatus, double budget, String description, LocalDate startDate, LocalDate endDate) {
+        this.id = id;
+        this.contactName = contactName;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
         this.status = status;
-        this.touristAmount = touristAmount;
+        this.description = description;
+        this.costPrice = costPrice;
+        this.touristTotal = touristTotal;
+        this.insuranceStatus = insuranceStatus;
         this.budget = budget;
         this.startDate = startDate;
         this.endDate = endDate;
 
         this.tourists = new ArrayList<Tourist>();
-        this.places = new ArrayList<Place>();
-        this.quotations = new ArrayList<Quotation>();
         this.transportations = new ArrayList<Transportation>();
     }
 
@@ -46,16 +63,16 @@ public class Tour {
         return description;
     }
 
-    public String getProvince() {
-        return province;
+    public Province getProvince() {
+        return this.province;
     }
 
     public TourStatus getStatus() {
-        return status;
+        return this.status;
     }
     
-    public int getTouristAmount() {
-        return touristAmount;
+    public int getTouristTotal() {
+        return this.touristTotal;
     }
 
     public double getBudget() {
@@ -70,8 +87,28 @@ public class Tour {
         return endDate;
     }
 
-    public TravelInsurance getTravelInsurance() {
-        return travelInsurance;
+    public Quotation getQuotation() {
+        return quotation;
+    }
+
+    public String getContactName() {
+        return contactName;
+    }
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+
+    public double getCostPrice() {
+        return costPrice;
+    }
+
+    public int getInsuranceStatus() {
+        return insuranceStatus;
     }
 
     public boolean addTourist(Tourist tourist) {
@@ -82,20 +119,12 @@ public class Tour {
         return this.tourists.remove(tourist);
     }
 
-    public boolean addPlace(Place place) {
-        return this.places.add(place);
+    public Hotel getHotel() {
+        return places;
     }
 
-    public boolean removePlace(Place place) {
-        return this.places.remove(place);
-    }
-
-    public boolean addQuotation(Quotation quotation) {
-        return this.quotations.add(quotation);
-    }
-
-    public boolean removeQuotation(Quotation quotation) {
-        return this.quotations.remove(quotation);
+    public void setHotel(Hotel places) {
+        this.places = places;
     }
 
     public boolean addTransportation(Transportation transportation) {
@@ -106,12 +135,11 @@ public class Tour {
         return this.transportations.remove(transportation);
     }
 
-    public void setTravelInsurance(TravelInsurance travelInsurance) {
-        this.travelInsurance = travelInsurance;
+    public void setQuotation(Quotation quotation) {
+        this.quotation = quotation;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProvince(Province province) {
+        this.province = province;
     }
-
 }
