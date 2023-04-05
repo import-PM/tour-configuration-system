@@ -3,17 +3,14 @@ package org.importpm.models;
 public class Tourist {
     private int id;
     private String name;
-    private String phoneNumber;
-    private String email;
+    private String citizenId;
     private String allergies;
     private String medicalNotes;
 
-    private TravelInsurance travelInsurance;
-
-    public Tourist(String name, String phoneNumber, String email, String allergies, String medicalNotes) {
+    public Tourist(int id, String name, String citizenId, String allergies, String medicalNotes) {
+        this.id = id;
         this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.citizenId = citizenId;
         this.allergies = allergies;
         this.medicalNotes = medicalNotes;
     }
@@ -25,17 +22,9 @@ public class Tourist {
     public String getName() {
         return name;
     }
-    
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public TravelInsurance getTravelInsurance() {
-        return travelInsurance;
+    public String getCitizenId() {
+        return citizenId;
     }
 
     public String getAllergies() {
@@ -45,13 +34,4 @@ public class Tourist {
     public String getMedicalNotes() {
         return medicalNotes;
     }
-
-    public void setTravelInsurance(TravelInsurance travelInsurance) {
-        this.travelInsurance = travelInsurance;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }

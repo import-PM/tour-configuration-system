@@ -5,10 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.importpm.models.Quotation;
-import org.importpm.models.Tour;
-import org.importpm.models.Tourist;
-import org.importpm.models.Transportation;
+import org.importpm.models.*;
+import org.importpm.models.enums.*;
 
 public class DBConnect {
     private static Connection conn;
@@ -98,7 +96,7 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 touristArrayList.add(new Tourist(
-                                rs.getString("id"),
+                                rs.getInt("id"),
                                 rs.getString("name"),
                                 rs.getString("citizen_id"),
                                 rs.getString("allergies"),
@@ -119,7 +117,7 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 tourist = new Tourist(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getString("name"),
                         rs.getString("citizen_id"),
                         rs.getString("allergies"),
@@ -140,11 +138,11 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 hotelArrayList.add(new Hotel(
-                                rs.getString("id"),
+                                rs.getInt("id"),
                                 rs.getString("name"),
                                 rs.getFloat("price"),
-                                rs.getString("type"),
-                                rs.getFloat("rate")
+                                HotelType.getType(rs.getInt("type")),
+                                HotelRate.getRating(rs.getInt("rate"))
                         )
                 );
             }
@@ -161,11 +159,11 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 hotel = new Hotel(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getString("name"),
                         rs.getFloat("price"),
-                        rs.getString("type"),
-                        rs.getFloat("rate")
+                        HotelType.getType(rs.getInt("type")),
+                        HotelRate.getRating(rs.getInt("rate"))
                 );
             }
         } catch (Exception e) {
@@ -182,7 +180,7 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 provinceArrayList.add(new Province(
-                                rs.getString("id"),
+                                rs.getInt("id"),
                                 rs.getString("name")
                         )
                 );
@@ -200,7 +198,7 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 province = new Province(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getString("name")
                 );
             }
@@ -218,9 +216,9 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 quotationArrayList.add(new Quotation(
-                                rs.getString("id"),
+                                rs.getInt("id"),
                                 rs.getFloat("real_price"),
-                                rs.getInt("status")
+                                QuotationStatus.getQuotationStatus(rs.getInt("status"))
                         )
                 );
             }
@@ -237,9 +235,9 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 quotation = new Quotation(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getFloat("real_price"),
-                        rs.getInt("status")
+                        QuotationStatus.getQuotationStatus(rs.getInt("status"))
                 );
             }
         } catch (Exception e) {
@@ -256,9 +254,9 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 transportationArrayList.add(new Transportation(
-                                rs.getString("id"),
+                                rs.getInt("id"),
                                 rs.getFloat("price"),
-                                rs.getInt("type")
+                                TransportationType.getTransportationType(rs.getInt("type"))
                         )
                 );
             }
@@ -275,9 +273,9 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 transportation = new Transportation(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getFloat("price"),
-                        rs.getInt("type")
+                        TransportationType.getTransportationType(rs.getInt("type"))
                 );
             }
         } catch (Exception e) {
@@ -294,17 +292,18 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 tourArrayList.add(new Tour(
-                        rs.getString("id"),
-                        rs.getString("contact_name"),
-                        rs.getString("contact_phone"),
-                        rs.getString("contact_email"),
-                        rs.getInt("status"),
-                        rs.getFloat("cost_price"),
-                        rs.getInt("tourist_total"),
-                        rs.getFloat("budget"),
-                        rs.getString("desciption"),
-                        rs.getDate("start_date"),
-                        rs.getDate("end_date")
+                                rs.getInt("id"),
+                                rs.getString("contact_name"),
+                                rs.getString("contact_phone"),
+                                rs.getString("contact_email"),
+                                TourStatus.getTourStatus(rs.getInt("status")),
+                                rs.getFloat("cost_price"),
+                                rs.getInt("tourist_total"),
+                                rs.getInt("insurance_status"),
+                                rs.getFloat("budget"),
+                                rs.getString("description"),
+                                rs.getDate("start_date").toLocalDate(),
+                                rs.getDate("end_date").toLocalDate()
                         )
                 );
             }
@@ -321,23 +320,26 @@ public class DBConnect {
             rs = query(query);
             while (rs.next()) {
                 tour = new Tour(
-                        rs.getString("id"),
+                        rs.getInt("id"),
                         rs.getString("contact_name"),
                         rs.getString("contact_phone"),
                         rs.getString("contact_email"),
-                        rs.getInt("status"),
+                        TourStatus.getTourStatus(rs.getInt("status")),
                         rs.getFloat("cost_price"),
                         rs.getInt("tourist_total"),
+                        rs.getInt("insurance_status"),
                         rs.getFloat("budget"),
-                        rs.getString("desciption"),
-                        rs.getDate("start_date"),
-                        rs.getDate("end_date")
+                        rs.getString("description"),
+                        rs.getDate("start_date").toLocalDate(),
+                        rs.getDate("end_date").toLocalDate()
                 );
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return tour;
     }
+
 
     //-------------------------------- Insert Data To Table --------------------------------
 
@@ -349,7 +351,7 @@ public class DBConnect {
                     tour.getContactName() + "','" +
                     tour.getContactPhone() + "','" +
                     tour.getContactEmail() + "','" +
-                    tour.getInsuranceStaus() + "','" +
+                    tour.getInsuranceStatus() + "','" +
                     tour.getCostPrice() + "','" +
                     tour.getTouristTotal() + "','" +
                     tour.getBudget() + "','" +
@@ -385,7 +387,7 @@ public class DBConnect {
     public static void updateQuotationStatus(Quotation quotation) {
         try {
             queryUpdate("UPDATE quotation\n" +
-                    "SET status='" + quotation.getStatus() + "'\n" +
+                    "SET status='" + quotation.getQuotationStatus().getStatus() + "'\n" +
                     "WHERE id=" + quotation.getId());
         } catch (Exception e) {
             throw new RuntimeException(e);

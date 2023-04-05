@@ -35,7 +35,7 @@ CREATE TABLE hotel (
                        name text NOT NULL ,
                        price float NOT NULL check ( price >= 0 ),
                        type int(2) check ( type >= 0 ),
-                       rate float NOT NULL check ( rate >= 0 ),
+                       rate int(1) NOT NULL check ( rate in (0,1,2,3,4,5) ),
                        FOREIGN KEY (fk_province_id) REFERENCES province (id)
                            ON DELETE CASCADE
                            ON UPDATE NO ACTION
