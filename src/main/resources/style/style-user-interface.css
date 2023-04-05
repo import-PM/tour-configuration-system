@@ -10,6 +10,7 @@
     background-section-option   : #ffffff; /* White */
     background-text-field       : #ffffff; /* White */
     background-text-area        : #ffffff; /* White */
+    background-card-hotel       : rgba(0,0,0,0.2); /* Gray */
 
     /* Button */
     btn-sidebar-hover           : #ffffff; /* White */
@@ -81,8 +82,6 @@
 
 .background-section-scrollbar {
     -fx-background-color: background-section-option;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
     -fx-pref-width: 1000;
     -fx-pref-height: 700;
     -fx-translate-x: 20;
@@ -101,9 +100,12 @@
 }
 
 .card-hotel {
-    -fx-pref-width: 500px;
-    -fx-max-width: 500px;
+    -fx-pref-width: 780px;
+    -fx-max-width: 780px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
     -fx-pref-height: 50px;
+    -fx-background-color: background-card-hotel;
 }
 
 /* <--------------------------------------------------------------------------> */
@@ -129,7 +131,6 @@
     -fx-translate-x: 20;
 }
 
-.btn-sidebar-default:hover {
 .btn-sidebar-default:hover {
     -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
@@ -219,6 +220,24 @@
     -fx-border-color: btn-color;
     -fx-border-width: 2;
 }
+
+.btn-app-search {
+    -fx-background-color: btn-color-default;
+    -fx-text-fill: title-btn-default;
+    -fx-font-size: 16;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-pref-width: 70;
+    -fx-pref-height: 20;
+}
+
+.btn-app-search:hover {
+    -fx-background-color: btn-app-default-hover;
+    -fx-text-fill: btn-color;
+    -fx-border-color: btn-color;
+    -fx-border-width: 2;
+}
+
 
 .btn-app-cancel {
     -fx-background-color: btn-color-cancel;
