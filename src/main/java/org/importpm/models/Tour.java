@@ -18,9 +18,9 @@ public class Tour {
     private LocalDate endDate;
 
     private List<Tourist> tourists;
-    private List<Place> places;
-    private List<Quotation> quotations;
+    private Hotel places;
     private List<Transportation> transportations;
+    private Quotation quotation;
     private TravelInsurance travelInsurance;
 
     public Tour(String description, String province, TourStatus status, int touristAmount, double budget, LocalDate startDate, LocalDate endDate) {
@@ -33,8 +33,6 @@ public class Tour {
         this.endDate = endDate;
 
         this.tourists = new ArrayList<Tourist>();
-        this.places = new ArrayList<Place>();
-        this.quotations = new ArrayList<Quotation>();
         this.transportations = new ArrayList<Transportation>();
     }
 
@@ -74,6 +72,10 @@ public class Tour {
         return travelInsurance;
     }
 
+    public Quotation getQuotation() {
+        return quotation;
+    }
+
     public boolean addTourist(Tourist tourist) {
         return this.tourists.add(tourist);
     }
@@ -82,20 +84,12 @@ public class Tour {
         return this.tourists.remove(tourist);
     }
 
-    public boolean addPlace(Place place) {
-        return this.places.add(place);
+    public Hotel getHotel() {
+        return places;
     }
 
-    public boolean removePlace(Place place) {
-        return this.places.remove(place);
-    }
-
-    public boolean addQuotation(Quotation quotation) {
-        return this.quotations.add(quotation);
-    }
-
-    public boolean removeQuotation(Quotation quotation) {
-        return this.quotations.remove(quotation);
+    public void setHotel(Hotel places) {
+        this.places = places;
     }
 
     public boolean addTransportation(Transportation transportation) {
@@ -108,6 +102,10 @@ public class Tour {
 
     public void setTravelInsurance(TravelInsurance travelInsurance) {
         this.travelInsurance = travelInsurance;
+    }
+
+    public void setQuotation(Quotation quotation) {
+        this.quotation = quotation;
     }
 
     public void setId(int id) {

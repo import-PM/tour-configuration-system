@@ -13,7 +13,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -37,6 +36,7 @@ public class BuildTourPageController extends AbstractPageController {
     @FXML private DatePicker endDatePicker;
 
     public BuildTourPageController() {
+        nameTitleMenuButton = new MenuButton();
         initialize();
     }
 
@@ -45,9 +45,7 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     private void setValue() {
-        nameTitleMenuButton.getItems().add(new MenuItem("นาย"));
-        nameTitleMenuButton.getItems().add(new MenuItem("นาง"));
-        nameTitleMenuButton.getItems().add(new MenuItem("นางสาว"));
+        // nameTitleMenuButton.getItems().addAll("นาย", "นาง", "นางสาว");
     }
 
     @FXML private void handleCancelButton(ActionEvent e) {

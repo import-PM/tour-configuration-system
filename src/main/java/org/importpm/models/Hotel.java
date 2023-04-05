@@ -1,17 +1,18 @@
 package org.importpm.models;
 
-import org.importpm.models.enums.PlaceType;
+import org.importpm.models.enums.HotelRate;
+import org.importpm.models.enums.HotelType;
 
-public class Place {
+public class Hotel {
     private int id;
     private String name;
     private double price;
-    private PlaceType type;
-    private int rate;
+    private HotelType type;
+    private HotelRate rate;
 
     private double fixedPrice;
 
-    public Place(String name, double price, PlaceType type, int rate) {
+    public Hotel(String name, double price, HotelType type, HotelRate rate) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -30,11 +31,11 @@ public class Place {
         return this.price;
     }
 
-    public PlaceType getType() {
+    public HotelType getType() {
         return this.type;
     }
 
-    public int getRate() {
+    public HotelRate getRate() {
         return this.rate;
     }
 

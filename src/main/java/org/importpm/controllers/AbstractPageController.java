@@ -10,13 +10,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public abstract class AbstractPageController {
-    @FXML private Button buildTourButton;
-    @FXML private Button hotelButton;
-    @FXML private Button transportButton;
-    @FXML private Button tourListButton;
+    @FXML protected Button buildTourButton;
+    @FXML protected Button hotelButton;
+    @FXML protected Button transportButton;
+    @FXML protected Button tourListButton;
 
     @FXML
-    public void handleBuildTourButton(ActionEvent e) {
+    protected void handleBuildtourButton(ActionEvent e) {
         try {
             App.goTo(Page.BUILD_TOUR);
         } catch (IOException e1) {
@@ -26,7 +26,7 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleHotelButton(ActionEvent e) {
+    protected void handleHotelButton(ActionEvent e) {
         try {
             App.goTo(Page.HOTEL);
         } catch (IOException e1) {
@@ -36,7 +36,7 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleTransportButton(ActionEvent e) {
+    protected void handleTranspotButton(ActionEvent e) {
         try {
             App.goTo(Page.TRANSPORT);
         } catch (IOException e1) {
@@ -46,13 +46,23 @@ public abstract class AbstractPageController {
     }
 
     @FXML
-    public void handleTourListButton(ActionEvent e) {
+    protected void handleTourlistButton(ActionEvent e) {
         try {
             App.goTo(Page.TOUR_LIST);
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void handleTourDetailButton(ActionEvent e) {
+
+    }
+
+    @FXML
+    protected void handleExitButton(ActionEvent e) {
+        System.exit(0);
     }
 
 }
