@@ -4,25 +4,17 @@ import org.importpm.models.enums.TransportationType;
 
 public class Transportation {
     private int id;
-    private String name;
     private double price;
     private TransportationType type;
-    
-    private double fixedPrice;
 
-    public Transportation(String name, double price, TransportationType type, double fixedPrice) {
-        this.name = name;
+    public Transportation(int id, double price, TransportationType type) {
+        this.id = id;
         this.price = price;
         this.type = type;
-        this.fixedPrice = fixedPrice;
     }
 
     public int getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public double getPrice() {
@@ -31,13 +23,5 @@ public class Transportation {
 
     public TransportationType getType() {
         return type;
-    }
-
-    public double getFixedPrice() {
-        return fixedPrice;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

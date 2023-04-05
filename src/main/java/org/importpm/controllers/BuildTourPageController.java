@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.importpm.App;
 import org.importpm.models.enums.TourStatus;
-import org.importpm.databases.Database;
+import org.importpm.services.DBConnect;
 import org.importpm.models.Tour;
 
 import javafx.application.Platform;
@@ -68,11 +68,50 @@ public class BuildTourPageController extends AbstractPageController {
         Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
         
         try {
-            Database.insertTour(tour);
+            DBConnect.insertTour(tour);
         } catch(Exception ex) {
             new Alert(AlertType.ERROR, ex.getMessage()).show();
         }
         
+    }
+
+    @FXML
+    private void handleChangeThemeDefault(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("default.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleChangeThemeDark(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("dark.css");
+            App.goTo("index");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void handleChangeThemeBlueSky(ActionEvent actionEvent){
+        try {
+            App.setPath("bluesky.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleChangeThemeHotPink(ActionEvent actionEvent){
+        try {
+            FXRouter.setPath("hotpink.css");
+            App.goTo("homepage");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

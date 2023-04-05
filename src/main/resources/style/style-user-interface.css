@@ -130,7 +130,6 @@
 }
 
 .btn-sidebar-default:hover {
-.btn-sidebar-default:hover {
     -fx-background-color: btn-sidebar-hover;
     -fx-text-fill: main-color;
 }

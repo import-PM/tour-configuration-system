@@ -4,11 +4,12 @@ import org.importpm.models.enums.QuotationStatus;
 
 public class Quotation {
     private int id;
-    private double totalPrice;
+    private double realPrice;
     private QuotationStatus quotationStatus;
 
-    public Quotation(double totalPrice, QuotationStatus quotationStatus) {
-        this.totalPrice = totalPrice;
+    public Quotation(int id, double realPrice, QuotationStatus quotationStatus) {
+        this.id = id;
+        this.realPrice = realPrice;
         this.quotationStatus = quotationStatus;
     }
 
@@ -20,8 +21,8 @@ public class Quotation {
         return quotationStatus;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public double getRealPrice() {
+        return realPrice;
     }
 
     public void setId(int id) {
