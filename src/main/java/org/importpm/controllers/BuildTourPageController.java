@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.importpm.App;
 import org.importpm.models.enums.TourStatus;
-import org.importpm.databases.Database;
+import org.importpm.services.DBConnect;
 import org.importpm.models.Tour;
 
 import javafx.event.ActionEvent;
@@ -61,7 +61,7 @@ public class BuildTourPageController extends AbstractPageController {
         Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
         
         try {
-            Database.insertTour(tour);
+            DBConnect.insertTour(tour);
         } catch(Exception ex) {
             new Alert(AlertType.ERROR, ex.getMessage()).show();
         }

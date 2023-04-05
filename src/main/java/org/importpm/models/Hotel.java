@@ -12,7 +12,8 @@ public class Hotel {
 
     private double fixedPrice;
 
-    public Hotel(String name, double price, HotelType type, HotelRate rate) {
+    public Hotel(int id, String name, double price, HotelType type, HotelRate rate) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.type = type;

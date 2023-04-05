@@ -24,4 +24,12 @@ public enum HotelRate {
         return imagePath;
     }
 
+    public static HotelRate getRating(int type) throws Exception {
+        for (HotelRate r : HotelRate.values()) {
+            if (r.getRating() == type) {
+                return r;
+            }
+        }
+        throw new Exception();
+    }
 }
