@@ -311,7 +311,8 @@ public class DBConnect {
                 transportationArrayList.add(new Transportation(
                                 rs.getInt("id"),
                                 rs.getFloat("price"),
-                                TransportationType.getTransportationType(rs.getInt("type"))
+                                TransportationType.getTransportationType(rs.getInt("type")),
+                                rs.getInt("amount")
                         )
                 );
             }
@@ -330,7 +331,8 @@ public class DBConnect {
                 transportation = new Transportation(
                         rs.getInt("id"),
                         rs.getFloat("price"),
-                        TransportationType.getTransportationType(rs.getInt("type"))
+                        TransportationType.getTransportationType(rs.getInt("type")),
+                        rs.getInt("amount")
                 );
             }
         } catch (Exception e) {
@@ -340,16 +342,20 @@ public class DBConnect {
     }
 
     public static List<Transportation> getTransportations() {
-        return createTransportationList("SELECT id,price,type FROM transportation");
+        return createTransportationList("SELECT tt.fk_tour_id,tt.fk_transportation_id,tt.amount,t.id,t.price,t.type FROM tour_transportation as tt\n" +
+                "INNER JOIN transportation as t\n" +
+                "ON t.id = tt.fk_transportation_id\n");
     }
 
     public static Transportation getTransportationById(int id) {
-        return createTransportation("SELECT id,price,type FROM transportation\n" +
+        return createTransportation("SELECT tt.fk_tour_id,tt.fk_transportation_id,tt.amount,t.id,t.price,t.type FROM tour_transportation as tt\n" +
+                "INNER JOIN transportation as t\n" +
+                "ON t.id = tt.fk_transportation_id\n" +
                 "WHERE id=" + id);
     }
 
     public static List<Transportation> getTransportationByTourId(int id) {
-        return createTransportationList("SELECT tt.fk_tour_id,tt.fk_transportation_id,t.id,t.price,t.type FROM tour_transportation as tt\n" +
+        return createTransportationList("SELECT tt.fk_tour_id,tt.fk_transportation_id,tt.amount,t.id,t.price,t.type FROM tour_transportation as tt\n" +
                 "INNER JOIN transportation as t\n" +
                 "ON t.id = tt.fk_transportation_id\n" +
                 "WHERE tt.fk_tour_id =" + id);
@@ -448,6 +454,8 @@ public class DBConnect {
                     tour.getStartDate() + "','" +
                     tour.getEndDate() + "')"
             );
+            insertTourTransportation(tour);
+            insertTourHotel(tour);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -462,11 +470,35 @@ public class DBConnect {
         }
     }
 
+    public static void insertTourHotel(Tour tour) {
+        try {
+            queryUpdate("INSERT INTO tour_hotel(fk_tour_id,fk_hotel_id,cost_withholding) VALUE\n" +
+                    "('" + tour.getId() + "','" +
+                    tour.getHotel().getId() + "')");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void insertTourTransportation(Tour tour) {
+        try {
+            for (Transportation transportation : tour.getTransportations()) {
+                queryUpdate("INSERT INTO tour_transportation(fk_tour_id,fk_transportation_id,cost_withholding,amount) VALUE\n" +
+                        "('" + tour.getId() + "','" +
+                        transportation.getId() + "','" +
+                        transportation.getPrice() + "','" +
+                        transportation.getAmount() + "')");
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //-------------------------------- Update Data To Table --------------------------------
     public static void updateTourStatus(Tour tour) {
         try {
             queryUpdate("UPDATE tour\n" +
-                    "SET status='" + tour.getStatus() + "'\n" +
+                    "SET status='" + tour.getStatus().getStatus() + "'\n" +
                     "WHERE id=" + tour.getId());
         } catch (Exception e) {
             throw new RuntimeException(e);

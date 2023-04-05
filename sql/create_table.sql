@@ -96,6 +96,7 @@ CREATE TABLE tour_transportation (
                                      fk_tour_id INTEGER NOT NULL ,
                                      fk_transportation_id INTEGER NOT NULL ,
                                      cost_withholding float NOT NULL check ( cost_withholding >= 0 ),
+                                     amount int(2) NOT NULL check ( amount > 0 ),
                                      FOREIGN KEY (fk_tour_id) REFERENCES tour (id)
                                          ON DELETE CASCADE
                                          ON UPDATE NO ACTION ,

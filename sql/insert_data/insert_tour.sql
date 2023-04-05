@@ -7,8 +7,8 @@ INSERT INTO tour_hotel VALUE
     (2,11,3400);
 
 INSERT INTO tour_transportation VALUE
-    (1,1,2300),
-    (2,2,6000);
+    (1,1,2300,1),
+    (2,2,6000,1);
 
 INSERT INTO tour_tourist VALUE
     (1,1),

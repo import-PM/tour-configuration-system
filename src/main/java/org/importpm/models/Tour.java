@@ -117,6 +117,10 @@ public class Tour {
         return insuranceStatus;
     }
 
+    public List<Transportation> getTransportations() {
+        return transportations;
+    }
+
     public boolean addTourist(Tourist tourist) {
         return this.tourists.add(tourist);
     }
