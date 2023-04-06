@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -11,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="backgroundAnchorPane" maxHeight="768.0" maxWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.TransportPageController">
+<AnchorPane fx:id="backgroundAnchorPane" maxHeight="768.0" maxWidth="1366.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-section-main-linear" stylesheets="@../../../style/style-user-interface.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.importpm.controllers.TransportPageController">
     <children>
       <VBox fx:id="sidebar" alignment="CENTER" layoutX="35.0" layoutY="202.0" prefHeight="567.0" prefWidth="191.0" spacing="35.0" styleClass="background-section-sidebar">
          <children>
@@ -81,13 +86,13 @@
             <VBox prefHeight="200.0" prefWidth="100.0" />
          </children>
       </VBox>
-        <ImageView fx:id="icon" fitHeight="97.0" fitWidth="126.0" layoutX="55.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="icon" fitHeight="80.0" fitWidth="300.0" layoutX="50.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" styleClass="background-section-logo">
          <image>
             <Image url="@../../../images/Logo%20-%20App.png" />
          </image></ImageView>
-      <Pane layoutX="317.0" layoutY="27.0" styleClass="background-section-option">
+      <Pane layoutX="315.0" layoutY="34.0" styleClass="background-section-option">
          <children>
-            <Label fx:id="headerLabel" layoutX="20.0" layoutY="20.0" styleClass="header" text="การเดินทาง">
+            <Label fx:id="headerLabel" layoutX="40.0" layoutY="20.0" styleClass="header" text="การเดินทาง">
                <font>
                   <Font size="36.0" />
                </font>
@@ -100,7 +105,7 @@
             <Pane layoutY="639.0" prefHeight="40.0" prefWidth="972.0" styleClass="pane-section-layout">
                <children>
                   <Button fx:id="cancelButton" layoutX="20.0" mnemonicParsing="false" onAction="#handleCancelButton" styleClass="btn-app-cancel" text="ย้อนกลับ" />
-                  <Button fx:id="saveButton" layoutX="880.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="บันทึก" />
+                  <Button fx:id="saveButton" layoutX="880.0" mnemonicParsing="false" onAction="#handleSaveButton" styleClass="btn-app-default" text="ต่อไป" />
                </children>
             </Pane>
             <Pane layoutX="250.0" layoutY="238.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
@@ -112,10 +117,10 @@
                   </ImageView>
                   <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="2 - 4 คน" />
                   <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
-                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คัน" />
                   <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
                   <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดเล็ก" />
-                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
+                  <TextField fx:id="carTextField" layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
                </children>
             </Pane>
             <Pane layoutX="250.0" layoutY="300.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
@@ -127,10 +132,10 @@
                   </ImageView>
                   <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="5 - 10 คน" />
                   <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
-                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คัน" />
                   <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
                   <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดกลาง" />
-                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
+                  <TextField fx:id="vanTextField" layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
                </children>
             </Pane>
             <Pane layoutX="250.0" layoutY="360.0" prefHeight="45.0" prefWidth="360.0" styleClass="card-transports">
@@ -142,10 +147,10 @@
                   </ImageView>
                   <Label layoutX="200.0" layoutY="12.5" styleClass="title-on-page" text="10 คนขึ้นไป" />
                   <Label layoutX="315.0" layoutY="12.5" styleClass="title-on-page" text="2500 / วัน" />
-                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คน" />
+                  <Label layoutX="540.0" layoutY="10.0" styleClass="title-on-page" text="คัน" />
                   <Label layoutX="420.0" layoutY="10.0" styleClass="title-on-page" text="จำนวน" />
                   <Label layoutX="100.0" layoutY="12.5" styleClass="title-on-page" text="ขนาดใหญ่" />
-                  <TextField layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
+                  <TextField fx:id="busTextField" layoutX="470.0" layoutY="10.0" prefWidth="50.0" />
                </children>
             </Pane>
          </children>

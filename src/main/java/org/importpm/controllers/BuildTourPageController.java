@@ -1,12 +1,16 @@
 package org.importpm.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.importpm.App;
+import org.importpm.controllers.enums.Page;
 import org.importpm.models.enums.TourStatus;
 import org.importpm.services.DBConnect;
+import org.importpm.models.Province;
 import org.importpm.models.Tour;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -36,11 +40,19 @@ public class BuildTourPageController extends AbstractPageController {
     @FXML private DatePicker endDatePicker;
 
     public BuildTourPageController() {
-        nameTitleMenuButton = new MenuButton();
-        initialize();
+        Platform.runLater(new Runnable() {
+
+            @Override
+            public void run() {
+                initialize();
+            }
+            
+        });
     }
 
     private void initialize() {
+        nameTitleMenuButton = new MenuButton();
+
         setValue();
     }
 
@@ -58,53 +70,58 @@ public class BuildTourPageController extends AbstractPageController {
     }
 
     @FXML private void handleSaveButton(ActionEvent e) {
-        Tour tour = new Tour(detailTextArea.getText(), locationTextField.getText(), TourStatus.PROGRESS, Integer.parseInt(customerTextField.getText()), Double.parseDouble(budgetTextField.getText()), startDatePicker.getValue(), endDatePicker.getValue());
-        
+        int isAcceptInsurance = 1;
+        if (denyRadioButton.isSelected()) isAcceptInsurance = 0;
+
         try {
-            DBConnect.insertTour(tour);
-        } catch(Exception ex) {
-            new Alert(AlertType.ERROR, ex.getMessage()).show();
+            Province province = DBConnect.getProvinceByName(locationTextField.getText());
+            Tour tour = new Tour(nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), Integer.parseInt(customerTextField.getText()), isAcceptInsurance, Double.parseDouble(budgetTextField.getText()), detailTextArea.getText(), province, startDatePicker.getValue(), endDatePicker.getValue());
+            App.setSelectedTour(tour);
+            App.setPreviousPage(Page.BUILD_TOUR);
+            App.goTo(Page.HOTEL);
+        } catch (Exception e1) {
+            new Alert(AlertType.ERROR, "Something went wrong! Please try again.").show();
         }
-        
+
     }
 
-    @FXML
-    private void handleChangeThemeDefault(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("default.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeDefault(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("default.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
-    @FXML
-    private void handleChangeThemeDark(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("dark.css");
-            App.goTo("index");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    @FXML
-    private void handleChangeThemeBlueSky(ActionEvent actionEvent){
-        try {
-            App.setPath("bluesky.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeDark(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("dark.css");
+    //         App.goTo("index");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
+    // @FXML
+    // private void handleChangeThemeBlueSky(ActionEvent actionEvent){
+    //     try {
+    //         App.setPath("bluesky.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
-    @FXML
-    private void handleChangeThemeHotPink(ActionEvent actionEvent){
-        try {
-            FXRouter.setPath("hotpink.css");
-            App.goTo("homepage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // @FXML
+    // private void handleChangeThemeHotPink(ActionEvent actionEvent){
+    //     try {
+    //         FXRouter.setPath("hotpink.css");
+    //         App.goTo("homepage");
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
 }

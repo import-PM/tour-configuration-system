@@ -4,10 +4,14 @@ public enum Page {
     //TODO: Review Pages
     PRIMARY("fxml/primary.fxml"),
     SECONDARY("fxml/secondary.fxml"),
+    
     BUILD_TOUR("fxml/buildtourpage.fxml"),
     HOTEL("fxml/hotelpage.fxml"),
-    TRANSPORT("fxml/transport.fxml"),
-    TOUR_LIST("fxml/tourlistpage.fxml");
+    TRANSPORT("fxml/transportpage.fxml"),
+    TOUR_LIST("fxml/tourlistpage.fxml"),
+    TOUR_DETAIL("fxml/tourdetailpage.fxml"),
+
+    RUNNING("fxml/runningapp.fxml");
 
     private final String fxmlPath;
 

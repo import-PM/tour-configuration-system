@@ -45,6 +45,43 @@ public class Tour {
         this.province = new Province();
     }
 
+    public Tour(String contactName, String contactPhone, String contactEmail,
+        int touristTotal, int insuranceStatus, double budget, String description, LocalDate startDate, LocalDate endDate) {
+        this.contactName = contactName;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
+        this.status = TourStatus.PROGRESS;
+        this.description = description;
+        this.touristTotal = touristTotal;
+        this.insuranceStatus = insuranceStatus;
+        this.budget = budget;
+        this.startDate = startDate;
+        this.endDate = endDate;
+
+        this.tourists = new ArrayList<Tourist>();
+        this.transportations = new ArrayList<Transportation>();
+        this.province = new Province();
+        }
+
+    public Tour(String contactName, String contactPhone, String contactEmail, int touristTotal, int insuranceStatus, double budget, String description, Province province, LocalDate startDate, LocalDate endDate) {
+        this.contactName = contactName;
+        this.contactPhone = contactPhone;
+        this.contactEmail = contactEmail;
+        this.touristTotal = touristTotal;
+        this.insuranceStatus = insuranceStatus;
+        this.budget = budget;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+
+        this.status = TourStatus.PROGRESS;
+
+        this.province = province;
+        this.tourists = new ArrayList<>();
+        this.transportations = new ArrayList<>();
+    }
+
+
     public int getId() {
         return id;
     }
@@ -139,6 +176,10 @@ public class Tour {
 
     public void setTourists(List<Tourist> tourists) {
         this.tourists = tourists;
+    }
+
+    public void setStatus(TourStatus status) {
+        this.status = status;
     }
 
     public void setTransportations(List<Transportation> transportations) {

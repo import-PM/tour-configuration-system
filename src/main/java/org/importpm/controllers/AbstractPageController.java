@@ -57,7 +57,12 @@ public abstract class AbstractPageController {
 
     @FXML
     protected void handleTourDetailButton(ActionEvent e) {
-
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML

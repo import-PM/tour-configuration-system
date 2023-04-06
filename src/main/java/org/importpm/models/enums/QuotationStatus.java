@@ -1,10 +1,11 @@
 package org.importpm.models.enums;
 
+import org.importpm.App;
+
 public enum QuotationStatus {
-    // TODO: Images needed
-    UNPAID("ยังไม่จ่ายเงิน", 0, ""),
-    PAID("จ่ายเงินแล้ว", 1, ""),
-    CANCEL("ยกเลิก", 9, "");
+    UNPAID("ยังไม่จ่ายเงิน", 0, App.class.getResource("/images/Accept.png").toString()),
+    PAID("จ่ายเงินแล้ว", 1, App.class.getResource("/images/Bus.png").toString()),
+    CANCEL("ยกเลิก", 9, App.class.getResource("/images/Car.png").toString());
 
     private String name;
     private int status;
