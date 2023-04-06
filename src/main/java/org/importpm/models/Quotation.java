@@ -13,6 +13,11 @@ public class Quotation {
         this.quotationStatus = quotationStatus;
     }
 
+    public Quotation(double realPrice) {
+        this.realPrice = realPrice;
+        this.quotationStatus = QuotationStatus.UNPAID;
+    }
+
     public int getId() {
         return id;
     }

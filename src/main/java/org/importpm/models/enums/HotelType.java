@@ -1,9 +1,11 @@
 package org.importpm.models.enums;
 
+import org.importpm.App;
+
 public enum HotelType {
     // TODO: Images needed
-    HOTEL("", 0),
-    HOUSE("", 1);
+    HOTEL(App.class.getResource("/images/Type_Hotel.png").toString(), 0),
+    HOUSE(App.class.getResource("/images/Type_Home.png").toString(), 1);
 
     private String imagePath;
     private int type;

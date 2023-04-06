@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class TourListPageController extends AbstractPageController {
@@ -518,6 +519,116 @@ public class TourListPageController extends AbstractPageController {
         DBConnect.updateTourStatus(selectedTours.get(9));
         try {
             App.goTo(Page.TOUR_LIST);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick0(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(0));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick1(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(1));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick2(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(2));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick3(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(3));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick4(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(4));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick5(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(5));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick6(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(6));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick7(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(7));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick8(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(8));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleClick9(MouseEvent e) {
+        App.setSelectedTour(selectedTours.get(9));
+        try {
+            App.goTo(Page.TOUR_DETAIL);
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();

@@ -1,11 +1,13 @@
 package org.importpm.controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.importpm.App;
 import org.importpm.controllers.enums.Page;
 import org.importpm.models.enums.TourStatus;
 import org.importpm.services.DBConnect;
+import org.importpm.models.Province;
 import org.importpm.models.Tour;
 
 import javafx.application.Platform;
@@ -71,14 +73,14 @@ public class BuildTourPageController extends AbstractPageController {
         int isAcceptInsurance = 1;
         if (denyRadioButton.isSelected()) isAcceptInsurance = 0;
 
-        Tour tour = new Tour(nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), Integer.parseInt(customerTextField.getText()), isAcceptInsurance, Double.parseDouble(budgetTextField.getText()), detailTextArea.getText(), startDatePicker.getValue(), endDatePicker.getValue());
-        App.setSelectedTour(tour);
-
         try {
+            Province province = DBConnect.getProvinceByName(locationTextField.getText());
+            Tour tour = new Tour(nameTextField.getText(), phoneNumberTextField.getText(), emailTextField.getText(), Integer.parseInt(customerTextField.getText()), isAcceptInsurance, Double.parseDouble(budgetTextField.getText()), detailTextArea.getText(), province, startDatePicker.getValue(), endDatePicker.getValue());
+            App.setSelectedTour(tour);
+            App.setPreviousPage(Page.BUILD_TOUR);
             App.goTo(Page.HOTEL);
-        } catch (IOException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
+        } catch (Exception e1) {
+            new Alert(AlertType.ERROR, "Something went wrong! Please try again.").show();
         }
 
     }

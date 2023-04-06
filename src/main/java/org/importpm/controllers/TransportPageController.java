@@ -24,17 +24,18 @@ public class TransportPageController extends AbstractPageController {
         Tour tour = App.getSelectedTour();
         List<Transportation> transportations = new ArrayList<>();
         
-        if (Integer.parseInt(carTextField.getText()) > 0) {
-            transportations.add(new Transportation(2500, TransportationType.CAR, Integer.parseInt(carTextField.getText())));
+        if (carTextField.getText() != "" && Integer.parseInt(carTextField.getText()) > 0) {
+            transportations.add(new Transportation(1,2500, TransportationType.CAR, Integer.parseInt(carTextField.getText())));
         }
-        if (Integer.parseInt(vanTextField.getText()) > 0) {
-            transportations.add(new Transportation(5000, TransportationType.VAN, Integer.parseInt(vanTextField.getText())));
+        if (vanTextField.getText() != "" && Integer.parseInt(vanTextField.getText()) > 0) {
+            transportations.add(new Transportation(2,5000, TransportationType.VAN, Integer.parseInt(vanTextField.getText())));
         }
-        if (Integer.parseInt(busTextField.getText()) > 0) {
-            transportations.add(new Transportation(10000, TransportationType.BUS, Integer.parseInt(busTextField.getText())));
+        if (busTextField.getText() != "" && Integer.parseInt(busTextField.getText()) > 0) {
+            transportations.add(new Transportation(3,10000, TransportationType.BUS, Integer.parseInt(busTextField.getText())));
         }
 
         if (transportations.size() > 0) {
+            tour.setHotel(App.getSelectedHotel());
             tour.setTransportations(transportations);
 
             try {
@@ -48,7 +49,12 @@ public class TransportPageController extends AbstractPageController {
 
     @FXML
     private void handleCancelButton(ActionEvent e) {
-
+        try {
+            App.goTo(Page.HOTEL);
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
 }

@@ -7,6 +7,9 @@ import java.util.List;
 import org.importpm.App;
 import org.importpm.controllers.enums.Page;
 import org.importpm.models.Hotel;
+import org.importpm.models.enums.HotelRate;
+import org.importpm.models.enums.HotelType;
+import org.importpm.services.DBConnect;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -22,10 +25,9 @@ import javafx.scene.layout.Pane;
 
 public class HotelPageController extends AbstractPageController {
     @FXML private ComboBox<String> typeComboBox;
-    @FXML private ComboBox<String> nameComboBox;
+    @FXML private TextField residenceTextField;
     @FXML private ComboBox<String> ratingComboBox;
     @FXML private ComboBox<String> priceComboBox;
-    @FXML private Label searchButtonLabel;
 
     @FXML private Button firstPageButton;
     @FXML private Button previousPageButton;
@@ -81,6 +83,7 @@ public class HotelPageController extends AbstractPageController {
     @FXML private Button selectButton6;
     @FXML private Button selectButton7;
 
+    private List<Hotel> queriedHotels;
     private List<Hotel> hotels;
     private List<Hotel> selectedHotels;
 
@@ -89,6 +92,8 @@ public class HotelPageController extends AbstractPageController {
     private List<Label> names;
     private List<ImageView> ratingImageViews;
     private List<Label> prices;
+
+    private List<int[]> priceRange;
 
     private int currentPage;
 
@@ -142,8 +147,8 @@ public class HotelPageController extends AbstractPageController {
                 prices.add(priceLabel6);
                 prices.add(priceLabel7);
 
-                hotels = new ArrayList<>();
-                // hotels = Database.selectAllHotels();
+                queriedHotels = DBConnect.getHotels();
+                hotels = queriedHotels;
                 currentPage = 1;
             
                 initialize();
@@ -157,6 +162,30 @@ public class HotelPageController extends AbstractPageController {
     }
 
     private void setValue() {
+        typeComboBox.getItems().add("");
+        for (HotelType type : HotelType.values()) {
+            typeComboBox.getItems().add(type.name());
+        }
+
+        ratingComboBox.getItems().add("");
+        for (HotelRate type : HotelRate.values()) {
+            ratingComboBox.getItems().add(type.name());
+        }
+        
+        priceRange = new ArrayList<>();
+        priceRange.add(new int[]{0, 500});
+        priceRange.add(new int[]{501, 1000});
+        priceRange.add(new int[]{1001, 2500});
+        priceRange.add(new int[]{2501, 5000});
+        priceRange.add(new int[]{5001, 10000});
+
+        priceComboBox.getItems().add("ไม่จำกัด");
+        for (int i = 0 ; i < priceRange.size() ; ++i) {
+            priceComboBox.getItems().add(String.format("%d - %d", priceRange.get(i)[0], priceRange.get(i)[1]));
+        }
+
+        priceComboBox.getSelectionModel().select(0);
+
         setPage();
     }
 
@@ -193,7 +222,7 @@ public class HotelPageController extends AbstractPageController {
             typeImageViews.get(i).setImage(new Image(selectedHotels.get(i).getType().getImagePath()));
             names.get(i).setText(selectedHotels.get(i).getName());
             ratingImageViews.get(i).setImage(new Image(selectedHotels.get(i).getRate().getImagePath()));
-            prices.get(i).setText(String.valueOf(selectedHotels.get(i).getPrice()));
+            prices.get(i).setText(String.format("%.2f", selectedHotels.get(i).getPrice()));
         }
 
     }
@@ -217,7 +246,7 @@ public class HotelPageController extends AbstractPageController {
 
     @FXML
     private void handleLastPageButton(ActionEvent e) {
-        currentPage = (int)Math.ceil(hotels.size()/7); setPage();
+        currentPage = (int)Math.ceil(hotels.size()/7.0); setPage();
     }
 
     @FXML
@@ -304,12 +333,48 @@ public class HotelPageController extends AbstractPageController {
 
     @FXML
     private void handleCancelButton(ActionEvent e) {
-        
+        try {
+            App.goTo(App.getPreviousPage());
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
     }
 
     @FXML
     private void handleSaveButton(ActionEvent e) {
-        
+        // TODO: มีไว้ทำไม
+    }
+
+    @FXML
+    private void handleSearch(ActionEvent e) {
+        hotels = new ArrayList<>();
+
+        if ((typeComboBox.getSelectionModel().getSelectedItem() == null ||
+            typeComboBox.getSelectionModel().getSelectedItem().equals("")) && 
+            (residenceTextField.getText() == null || 
+            residenceTextField.getText().equals("")) &&
+            (ratingComboBox.getSelectionModel().getSelectedItem() == null ||
+            ratingComboBox.getSelectionModel().getSelectedItem().equals("")) && 
+            priceComboBox.getSelectionModel().getSelectedItem().equals("ไม่จำกัด")) {
+
+            hotels = queriedHotels;
+            
+        } else {
+            for (Hotel h : queriedHotels) {
+                if (typeComboBox.getSelectionModel().getSelectedItem() == null || typeComboBox.getSelectionModel().getSelectedItem().equals("") || typeComboBox.getSelectionModel().getSelectedItem().equals(h.getType().name())) {
+                    if (residenceTextField.getText() == null || residenceTextField.getText().equals("") || h.getName().contains(residenceTextField.getText())) {
+                        if (ratingComboBox.getSelectionModel().getSelectedItem() == null || ratingComboBox.getSelectionModel().getSelectedItem().equals("") || ratingComboBox.getSelectionModel().getSelectedItem().equals(h.getRate().name())) {
+                            if (priceComboBox.getSelectionModel().getSelectedItem().equals("ไม่จำกัด") || h.getPrice() >= priceRange.get(priceComboBox.getSelectionModel().getSelectedIndex() - 1)[0] && h.getPrice() <= priceRange.get(priceComboBox.getSelectionModel().getSelectedIndex() - 1)[1]) {
+                                hotels.add(h);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        currentPage = 1;
+        setPage();
     }
 
 }

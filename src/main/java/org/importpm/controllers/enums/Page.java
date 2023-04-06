@@ -9,7 +9,9 @@ public enum Page {
     HOTEL("fxml/hotelpage.fxml"),
     TRANSPORT("fxml/transportpage.fxml"),
     TOUR_LIST("fxml/tourlistpage.fxml"),
-    TOUR_DETAIL("fxml/tourdetailpage.fxml");
+    TOUR_DETAIL("fxml/tourdetailpage.fxml"),
+
+    RUNNING("fxml/runningapp.fxml");
 
     private final String fxmlPath;
 

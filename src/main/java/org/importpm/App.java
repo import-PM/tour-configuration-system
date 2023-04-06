@@ -26,7 +26,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML(Page.HOTEL.getFxmlPath()), 1366, 768);
+        scene = new Scene(loadFXML(Page.RUNNING.getFxmlPath()), 1366, 768);
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();

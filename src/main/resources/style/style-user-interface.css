@@ -52,6 +52,14 @@
     -fx-font-family: "RSU";
 }
 
+.text-field {
+    -fx-font-family: "RSU";
+}
+
+.text-area {
+    -fx-font-family: "RSU";
+}
+
 /* <--------Layouts Function--------------------------------------------------> */
 
 .background-section-logo {
@@ -343,20 +351,20 @@
 
 .title-price {
     -fx-text-fill: title-color-price;
-    -fx-font-size: 12;
+    -fx-font-size: 16;
 }
 
 .text-field-set {
     -fx-background-color: background-text-field;
     -fx-text-fill : text-color-on-text-field;
-    -fx-font-size: 12;
+    -fx-font-size: 20;
     -fx-border-color: text-field-border;
 }
 
 .text-area-set {
     -fx-background-color: background-text-area;
     -fx-text-fill : text-color-on-text-area;
-    -fx-font-size: 12;
+    -fx-font-size: 20;
     -fx-border-color: text-area-border;
     -fx-pref-width: 800;
 }

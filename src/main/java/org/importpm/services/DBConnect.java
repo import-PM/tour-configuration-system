@@ -254,6 +254,11 @@ public class DBConnect {
                 "WHERE id =" + id);
     }
 
+    public static Province getProvinceByName(String name) {
+        return createProvince("SELECT id,name FROM province\n" + 
+                "WHERE name='" + name + "'");   
+    }
+
     //-------------------------------- Get Data From Quotation Table  --------------------------------
     private static List<Quotation> createQuotationList(String query) {
         List<Quotation> quotationArrayList = new ArrayList<>();
@@ -299,6 +304,12 @@ public class DBConnect {
     public static Quotation getQuotationById(int id) {
         return createQuotation("SELECT id,real_price,status FROM quotation\n" +
                 "WHERE id=" + id);
+    }
+
+    public static Quotation getQuotationLastId() {
+        return createQuotation("SELECT id,real_price,status FROM quotation\n" +
+        "ORDER BY id DESC\n" +
+        "LIMIT 1");
     }
 
     //-------------------------------- Get Data From Transportation Table  --------------------------------
@@ -474,7 +485,8 @@ public class DBConnect {
         try {
             queryUpdate("INSERT INTO tour_hotel(fk_tour_id,fk_hotel_id,cost_withholding) VALUE\n" +
                     "('" + tour.getId() + "','" +
-                    tour.getHotel().getId() + "')");
+                    tour.getHotel().getId() + "''," +
+                    tour.getHotel().getPrice() + ")");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
